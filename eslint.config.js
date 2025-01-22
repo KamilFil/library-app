@@ -5,6 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
 import parser from '@typescript-eslint/parser';
+import tanstackQueryPlugin from '@tanstack/eslint-plugin-query';
 
 export default [
   js.configs.recommended,
@@ -21,8 +22,10 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       import: importPlugin,
+      '@tanstack/query': tanstackQueryPlugin,
     },
     rules: {
+      ...tanstackQueryPlugin.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
