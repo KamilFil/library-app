@@ -1,9 +1,14 @@
-import { Box, Typography } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 
 export const App = () => {
+  const StyledBox = styled(Box)({
+    display: 'flex',
+    justifyContent: 'center',
+  });
+
   return (
-    <Box>
+    <StyledBox>
       <Typography variant="h1">LibraryAPP</Typography>
-    </Box>
+    </StyledBox>
   );
 };
