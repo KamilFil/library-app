@@ -1,4 +1,4 @@
-import { sum } from './example.ts';
+import { sum } from './sum.ts';
 
 describe('sum', () => {
   it('should  return correct result for 2 + 2', () => {

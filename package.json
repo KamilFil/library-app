@@ -12,7 +12,8 @@
     "prepare": "husky",
     "typecheck": "tsc --build --verbose --noEmit --pretty",
     "db": "json-server data/db.json --port 3307",
-    "test": "vitest"
+    "test": "vitest",
+    "test-e2e": "playwright test --ui"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@playwright/test": "^1.49.1",
     "@tanstack/eslint-plugin-query": "^5.64.2",
     "@tanstack/router-devtools": "^1.97.14",
     "@tanstack/router-plugin": "^1.97.14",
