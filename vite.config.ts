@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
@@ -6,6 +7,11 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 // eslint-disable-next-line import/no-default-export
 export default defineConfig({
   plugins: [TanStackRouterVite({}), react()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './vitest.setup.ts',
+  },
   server: {
     port: 3000,
   },
