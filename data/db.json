@@ -1,9 +1,67 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "John Doe",
-      "email": ""
+      "id": "string",
+      "firstName": "string",
+      "lastName": "string",
+      "email": "email",
+      "password": "string",
+      "role": "string",
+      "cardId": "string"
+    },
+    {
+      "id": "54re",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "joe.doe@example.com",
+      "password": "admin",
+      "role": "admin",
+      "cardId": "hqwe78dgq23678tufas"
+    }
+  ],
+  "books":
+  [
+    {
+      "id": "string",
+      "title": "string",
+      "author": "string",
+      "quantity": "number"
+    },
+    {
+      "id": "23de",
+      "title": "Mrówka Z",
+      "author": " Rafał Jastrząb",
+      "quantity": "2"
+    }
+  ],
+  "rentals":
+  [
+    {
+      "id": "string",
+      "userId": "string",
+      "bookId": "string",
+      "rentedAt": "timestamp | null"
+    },
+    {
+      "id": "43de",
+      "userId": "fd34",
+      "bookId": "54re",
+      "rentedAt": "2025-02-01 17:13"
+    }
+  ],
+  "logs":
+  [
+    {
+      "id": "string",
+      "actionDate": "timestamp",
+      "userEmail": "email",
+      "action": "string/enum"
+    },
+    {
+      "id": "29gf",
+      "actionDate": "2025-02-01 17:13",
+      "userEmail": "joe.doe@example.com",
+      "action": "WYPOŻYCZENIE"
     }
   ]
 }
