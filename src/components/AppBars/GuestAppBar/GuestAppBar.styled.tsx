@@ -1,6 +1,6 @@
 import { AppBar, styled } from '@mui/material';
 
-export const StyledBasicAppBar = styled(AppBar)(({ theme }) => ({
+export const StyledGuestAppBar = styled(AppBar)(({ theme }) => ({
   fontWeight: '600',
   background: theme.palette.primary.main,
   height: '75px',

@@ -11,37 +11,80 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root';
+import { Route as IndexImport } from './routes/index';
+import { Route as BooksIndexImport } from './routes/books/index';
 
 // Create/Update Routes
+
+const IndexRoute = IndexImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const BooksIndexRoute = BooksIndexImport.update({
+  id: '/books/',
+  path: '/books/',
+  getParentRoute: () => rootRoute,
+} as any);
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {}
+  interface FileRoutesByPath {
+    '/': {
+      id: '/';
+      path: '/';
+      fullPath: '/';
+      preLoaderRoute: typeof IndexImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/books/': {
+      id: '/books/';
+      path: '/books';
+      fullPath: '/books';
+      preLoaderRoute: typeof BooksIndexImport;
+      parentRoute: typeof rootRoute;
+    };
+  }
 }
 
 // Create and export the route tree
 
-export interface FileRoutesByFullPath {}
+export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute;
+  '/books': typeof BooksIndexRoute;
+}
 
-export interface FileRoutesByTo {}
+export interface FileRoutesByTo {
+  '/': typeof IndexRoute;
+  '/books': typeof BooksIndexRoute;
+}
 
 export interface FileRoutesById {
   __root__: typeof rootRoute;
+  '/': typeof IndexRoute;
+  '/books/': typeof BooksIndexRoute;
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: never;
+  fullPaths: '/' | '/books';
   fileRoutesByTo: FileRoutesByTo;
-  to: never;
-  id: '__root__';
+  to: '/' | '/books';
+  id: '__root__' | '/' | '/books/';
   fileRoutesById: FileRoutesById;
 }
 
-export interface RootRouteChildren {}
+export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute;
+  BooksIndexRoute: typeof BooksIndexRoute;
+}
 
-const rootRouteChildren: RootRouteChildren = {};
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  BooksIndexRoute: BooksIndexRoute,
+};
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
@@ -52,7 +95,16 @@ export const routeTree = rootRoute
   "routes": {
     "__root__": {
       "filePath": "__root.tsx",
-      "children": []
+      "children": [
+        "/",
+        "/books/"
+      ]
+    },
+    "/": {
+      "filePath": "index.tsx"
+    },
+    "/books/": {
+      "filePath": "books/index.tsx"
     }
   }
 }
