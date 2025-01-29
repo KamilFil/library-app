@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { BookTable } from '../../components/BookTable/BookTable';
-import { AuthRole } from '../../types/auth';
 import { booksLoader } from './-loaders';
 import { BookPagination } from '../../components/BookPagination/BookPagination';
 
@@ -11,7 +10,7 @@ const BookList = () => {
 
   return (
     <>
-      <BookTable books={data} userType={AuthRole.GUEST} />
+      <BookTable books={data} />
       <BookPagination prev={prev} next={next} />
     </>
   );
@@ -25,7 +24,7 @@ export type BooksSearch = {
 export const Route = createFileRoute('/books/')({
   validateSearch: (search: Record<string, unknown>): BooksSearch => ({
     page: Number(search?.page ?? 1),
-    size: Number(search?.size ?? 1),
+    size: Number(search?.size ?? 5),
   }),
   loaderDeps: ({ search }) => ({ page: search.page, size: search.size }),
   loader: ({ deps: { page, size } }) => booksLoader(page, size),

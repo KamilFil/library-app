@@ -4,7 +4,7 @@ import { Link } from '@tanstack/react-router';
 import { useState } from 'react';
 
 export const RecordsBox = () => {
-  const recordsPerPageArray = [1, 5, 10, 25];
+  const recordsPerPageArray = [5, 10, 25];
   const [pageSize, setPageSize] = useState<number>(recordsPerPageArray[0]);
 
   return (

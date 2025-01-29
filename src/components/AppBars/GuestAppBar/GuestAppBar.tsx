@@ -1,12 +1,12 @@
-import { StyledBasicAppBar } from './BasicAppBar.styled';
+import { StyledGuestAppBar } from './GuestAppBar.styled';
 import { LoginBox } from './LoginBox/LoginBox';
 import { LogoBox } from './LogoBox/LogoBox';
 
-export const BasicAppBar = () => {
+export const GuestAppBar = () => {
   return (
-    <StyledBasicAppBar>
+    <StyledGuestAppBar>
       <LogoBox />
       <LoginBox />
-    </StyledBasicAppBar>
+    </StyledGuestAppBar>
   );
 };

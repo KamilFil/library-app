@@ -1,7 +1,7 @@
 import { Box, styled } from '@mui/material';
 
 export const StyledFooter = styled(Box)(({ theme }) => ({
-  position: 'absolute',
+  position: 'fixed',
   left: 0,
   bottom: 0,
   width: '100%',

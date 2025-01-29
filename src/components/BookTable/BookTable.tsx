@@ -1,42 +1,40 @@
 import {
   Table,
   TableBody,
-  TableCell,
   TableContainer,
   TableHead,
-  TableRow,
+  Typography,
 } from '@mui/material';
-import { AuthRole } from '../../types/auth';
 import { BookEntity } from '../../types/book';
+import { StyledTableCell, StyledTableRow } from './BookTable.styled';
 
 interface BookTableProps {
   books: BookEntity[];
-  userType: AuthRole;
 }
 
-export const BookTable = ({ books, userType }: BookTableProps) => {
+export const BookTable = ({ books }: BookTableProps) => {
   return (
     <>
-      <p>{userType}</p>
+      <Typography variant="h4">List of books</Typography>
       <TableContainer>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
-            <TableRow>
-              <TableCell align="right">Title</TableCell>
-              <TableCell align="right">Author</TableCell>
-              <TableCell align="right">Quantity</TableCell>
-            </TableRow>
+            <StyledTableRow>
+              <StyledTableCell align="left">Title</StyledTableCell>
+              <StyledTableCell align="left">Author</StyledTableCell>
+              <StyledTableCell align="left">Quantity</StyledTableCell>
+            </StyledTableRow>
           </TableHead>
           <TableBody>
             {books.map((book) => (
-              <TableRow
+              <StyledTableRow
                 key={book.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                <TableCell align="right">{book.title}</TableCell>
-                <TableCell align="right">{book.author}</TableCell>
-                <TableCell align="right">{book.quantity}</TableCell>
-              </TableRow>
+                <StyledTableCell align="left">{book.title}</StyledTableCell>
+                <StyledTableCell align="left">{book.author}</StyledTableCell>
+                <StyledTableCell align="left">{book.quantity}</StyledTableCell>
+              </StyledTableRow>
             ))}
           </TableBody>
         </Table>
