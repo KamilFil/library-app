@@ -3,35 +3,33 @@ import { Box, Button, styled } from '@mui/material';
 import { Footer } from '../components/Footer/Footer';
 import { BasicWrapper } from '../components/BasicWrapper';
 import { AuthRole } from '../types/auth';
-import { createContext, useState } from 'react';
 import { GuestAppBar } from '../components/AppBars/GuestAppBar/GuestAppBar';
 import { PanelAppBar } from '../components/AppBars/PanelAppBar/PanelAppBar';
-
-const UserRoleContext = createContext(AuthRole.GUEST);
+import { useContext } from 'react';
+import { UserRoleContext } from '../components/context/UserRoleContext';
 
 export const HomePage = () => {
+  const { user, setUser } = useContext(UserRoleContext);
+
   const StyledBox = styled(Box)({
     display: 'flex',
     justifyContent: 'center',
   });
 
-  const [user, setUser] = useState<AuthRole>(AuthRole.GUEST);
   return (
-    <UserRoleContext.Provider value={user}>
-      <StyledBox>
-        {user === AuthRole.GUEST ? <GuestAppBar /> : null}
-        {user === AuthRole.ADMIN || user === AuthRole.USER ? (
-          <PanelAppBar />
-        ) : null}
-        <Button onClick={() => setUser(AuthRole.GUEST)}>QUEST</Button>
-        <Button onClick={() => setUser(AuthRole.ADMIN)}>ADMIN</Button>
-        <Button onClick={() => setUser(AuthRole.USER)}>USER</Button>
-        <BasicWrapper>
-          <Outlet />
-        </BasicWrapper>
-        <Footer />
-      </StyledBox>
-    </UserRoleContext.Provider>
+    <StyledBox>
+      {user.role === AuthRole.GUEST ? <GuestAppBar /> : null}
+      {user.role === AuthRole.ADMIN || user.role === AuthRole.USER ? (
+        <PanelAppBar />
+      ) : null}
+      <Button onClick={() => setUser(AuthRole.GUEST)}>GUEST</Button>
+      <Button onClick={() => setUser(AuthRole.ADMIN)}>ADMIN</Button>
+      <Button onClick={() => setUser(AuthRole.USER)}>USER</Button>
+      <BasicWrapper>
+        <Outlet />
+      </BasicWrapper>
+      <Footer />
+    </StyledBox>
   );
 };
 

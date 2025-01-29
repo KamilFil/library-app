@@ -5,6 +5,7 @@ import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { routeTree } from './routeTree.gen';
 import './index.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { UserRoleProvider } from './components/providers/UserRoleProvider';
 
 const theme = createTheme({
   palette: {
@@ -39,10 +40,12 @@ declare module '@tanstack/react-router' {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
-    </ThemeProvider>
+    <UserRoleProvider>
+      <ThemeProvider theme={theme}>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </ThemeProvider>
+    </UserRoleProvider>
   </StrictMode>,
 );

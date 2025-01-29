@@ -19,13 +19,12 @@
       "cardId": "hqwe78dgq23678tufas"
     }
   ],
-  "books":
-  [
+  "books": [
     {
       "id": "23d2",
       "title": "Mrówka Z 2",
       "author": "Rafał Orzeł",
-      "quantity": 3,
+      "quantity": 0,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -33,7 +32,7 @@
       "id": "23d3",
       "title": "Mrówka Z i Skarb Lasu",
       "author": "Rafał Orzeł",
-      "quantity": 7,
+      "quantity": 6,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -41,7 +40,7 @@
       "id": "23d4",
       "title": "Baśń o Złotym Jabłku",
       "author": "Andrzej Maj",
-      "quantity": 2,
+      "quantity": 0,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -254,8 +253,7 @@
       "year": 2001
     }
   ],
-  "rentals":
-  [
+  "rentals": [
     {
       "id": "string",
       "userId": "string",
@@ -267,10 +265,57 @@
       "userId": "fd34",
       "bookId": "54re",
       "rentedAt": "2025-02-01 17:13"
+    },
+    {
+      "id": "3976",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "39b9",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "7810",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "afdd",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "f32f",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "9775",
+      "userId": "54re",
+      "bookId": "23d4",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "9a93",
+      "userId": "54re",
+      "bookId": "23d4",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "c9b8",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "29.01.2025"
     }
   ],
-  "logs":
-  [
+  "logs": [
     {
       "id": "string",
       "actionDate": "timestamp",
