@@ -3,6 +3,8 @@ export interface BookEntity {
   title: string;
   author: string;
   quantity: number;
+  description: string;
+  year: number;
 }
 
 export type BookDto = Omit<BookEntity, 'id'>;
