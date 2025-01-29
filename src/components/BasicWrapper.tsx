@@ -1,6 +1,8 @@
-import { Box } from '@mui/material';
 import { ReactNode } from 'react';
-import { StyledBasicWrapper } from './BasicWrapper.styled';
+import {
+  StyledBasicWrapper,
+  StyledBasicWrapperContainer,
+} from './BasicWrapper.styled';
 
 interface BasicWrapperInterface {
   children: ReactNode;
@@ -8,18 +10,8 @@ interface BasicWrapperInterface {
 
 export const BasicWrapper = ({ children }: BasicWrapperInterface) => {
   return (
-    <Box
-      sx={{
-        marginTop: '100px',
-        marginBottom: '100px',
-        width: '90%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-      }}
-    >
+    <StyledBasicWrapperContainer>
       <StyledBasicWrapper>{children}</StyledBasicWrapper>
-    </Box>
+    </StyledBasicWrapperContainer>
   );
 };
