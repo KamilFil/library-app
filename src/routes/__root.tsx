@@ -1,6 +1,8 @@
-import { createRootRoute } from '@tanstack/react-router';
-import { Box, styled, Typography } from '@mui/material';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import { createRootRoute, Outlet } from '@tanstack/react-router';
+import { Box, styled } from '@mui/material';
+import { BasicAppBar } from '../components/BasicAppBar/BasicAppBar';
+import { Footer } from '../components/Footer/Footer';
+import { BasicWrapper } from '../components/BasicWrapper';
 
 export const HomePage = () => {
   const StyledBox = styled(Box)({
@@ -10,8 +12,11 @@ export const HomePage = () => {
 
   return (
     <StyledBox>
-      <Typography variant="h1">LibraryAPP</Typography>
-      <TanStackRouterDevtools />
+      <BasicAppBar />
+      <BasicWrapper>
+        <Outlet />
+      </BasicWrapper>
+      <Footer />
     </StyledBox>
   );
 };
