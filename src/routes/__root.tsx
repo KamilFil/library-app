@@ -1,21 +1,20 @@
-import { createRootRoute } from '@tanstack/react-router';
-import { Box, styled, Typography } from '@mui/material';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import { Outlet, createRootRoute } from '@tanstack/react-router';
+import { BasicAppBar } from '../components/BasicAppBar/BasicAppBar.tsx';
+import { Footer } from '../components/Footer/Footer.tsx';
+import { Box } from '@mui/material';
 
-export const HomePage = () => {
-  const StyledBox = styled(Box)({
-    display: 'flex',
-    justifyContent: 'center',
-  });
-
+const RootComponent = () => {
   return (
-    <StyledBox>
-      <Typography variant="h1">LibraryAPP</Typography>
-      <TanStackRouterDevtools />
-    </StyledBox>
+    <>
+      <BasicAppBar />
+      <Box sx={{ marginTop: '75px' }}>
+        <Outlet />
+      </Box>
+      <Footer />
+    </>
   );
 };
 
 export const Route = createRootRoute({
-  component: HomePage,
+  component: RootComponent,
 });
