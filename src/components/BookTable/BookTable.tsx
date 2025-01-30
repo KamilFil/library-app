@@ -12,7 +12,7 @@ import { useContext } from 'react';
 import { AuthRole } from '../../types/auth';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { useNavigate } from '@tanstack/react-router';
-import { UserRoleContext } from '../context/UserRoleContext';
+import { UserRoleContext } from '../../context/UserRoleContext';
 
 interface BookTableProps {
   books: BookEntity[];
@@ -30,7 +30,7 @@ export const BookTable = ({ books }: BookTableProps) => {
     <>
       <Typography variant="h4">List of books</Typography>
       <TableContainer>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 650 }} aria-label="books-table">
           <TableHead>
             <StyledTableRow>
               <StyledTableCell align="left">Title</StyledTableCell>

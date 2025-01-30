@@ -6,7 +6,7 @@ import { AuthRole } from '../types/auth';
 import { GuestAppBar } from '../components/AppBars/GuestAppBar/GuestAppBar';
 import { PanelAppBar } from '../components/AppBars/PanelAppBar/PanelAppBar';
 import { useContext } from 'react';
-import { UserRoleContext } from '../components/context/UserRoleContext';
+import { UserRoleContext } from '../context/UserRoleContext';
 
 export const HomePage = () => {
   const { user, setUser } = useContext(UserRoleContext);

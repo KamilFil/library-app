@@ -32,7 +32,7 @@
       "id": "23d3",
       "title": "Mrówka Z i Skarb Lasu",
       "author": "Rafał Orzeł",
-      "quantity": 6,
+      "quantity": 2,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -48,7 +48,7 @@
       "id": "23d5",
       "title": "Księga Mądrego Smoka",
       "author": "Ewa Kwiatkowska",
-      "quantity": 9,
+      "quantity": 2,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -56,7 +56,7 @@
       "id": "23d6",
       "title": "Przygody Pszczoły M",
       "author": "Rafał Orzeł",
-      "quantity": 6,
+      "quantity": 2,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -64,7 +64,7 @@
       "id": "23d7",
       "title": "Czarodziejski Młyn",
       "author": "Jan Kowalski",
-      "quantity": 8,
+      "quantity": 7,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -96,7 +96,7 @@
       "id": "23db",
       "title": "Zaczarowana Rzeka",
       "author": "Andrzej Maj",
-      "quantity": 10,
+      "quantity": 9,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -313,6 +313,108 @@
       "userId": "54re",
       "bookId": "23d3",
       "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "c03b",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "61cc",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "d15c",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "a23e",
+      "userId": "54re",
+      "bookId": "23d6",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "a115",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "279b",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "6ab6",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "0217",
+      "userId": "54re",
+      "bookId": "23d7",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "0c15",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "228c",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "b4cf",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "c11a",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "81ae",
+      "userId": "54re",
+      "bookId": "23d6",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "49e6",
+      "userId": "54re",
+      "bookId": "23d6",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "f5ae",
+      "userId": "54re",
+      "bookId": "23db",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "4555",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "98ed",
+      "userId": "54re",
+      "bookId": "23d6",
+      "rentedAt": "30.01.2025"
     }
   ],
   "logs": [
