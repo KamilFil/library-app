@@ -1,29 +1,26 @@
-import { Button } from '@mui/material';
-import { useAuth } from '../../hooks/useAuth.ts';
+import { useState } from 'react';
+import { LoginForm } from './components/LoginForm.tsx';
+import { RegisterForm } from './components/RegisterForm.tsx';
+import { Box } from '@mui/material';
 
 export const SignIn = () => {
-  const { logout, login, register } = useAuth();
-  const handleRegister = async () => {
-    return register({
-      email: 'Joe Doe',
-      password: 'password',
-      firstName: 'Joe',
-      lastName: 'Doe',
-    });
-  };
+  const [formSwitch, setFormSwitch] = useState<boolean>(true);
 
-  const handleLogin = async () => {
-    return login('Joe Doe', 'password');
-  };
-
-  const handleLogout = () => {
-    return logout();
-  };
   return (
-    <>
-      <Button onClick={handleLogin}>Logowanie</Button>
-      <Button onClick={handleRegister}>Rejestracja</Button>
-      <Button onClick={handleLogout}>Logout</Button>
-    </>
+    <Box
+      sx={{
+        width: '100%',
+        height: '80vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      {formSwitch ? (
+        <LoginForm handleSwitchForm={() => setFormSwitch(!formSwitch)} />
+      ) : (
+        <RegisterForm handleSwitchForm={() => setFormSwitch(!formSwitch)} />
+      )}
+    </Box>
   );
 };
