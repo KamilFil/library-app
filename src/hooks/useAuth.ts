@@ -4,6 +4,7 @@ import { useAuthStore } from '../store/useAuthStore.ts';
 import { useNavigate } from '@tanstack/react-router';
 import { useMutation } from '@tanstack/react-query';
 import { useNotificationStore } from '../store/useNotificationStore.ts';
+import { AuthRole } from '../types/auth.ts';
 
 export const useAuth = () => {
   const { apiGet, apiPost } = useApi();
@@ -22,7 +23,7 @@ export const useAuth = () => {
 
       const newUser = user as User;
       newUser.cardId = Math.random().toString(36).substring(7);
-      newUser.role = 'user';
+      newUser.role = AuthRole.GUEST;
 
       const createdUser = await apiPost<UserAuth, User>('users', newUser);
       return {

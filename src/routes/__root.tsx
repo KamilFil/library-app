@@ -18,7 +18,9 @@ export const HomePage = () => {
 
   return (
     <StyledBox>
-      {user?.role === AuthRole.GUEST ? <GuestAppBar /> : null}
+      {user?.role === AuthRole.GUEST || user?.role === undefined ? (
+        <GuestAppBar />
+      ) : null}
       {user?.role === AuthRole.ADMIN || user?.role === AuthRole.USER ? (
         <PanelAppBar />
       ) : null}
