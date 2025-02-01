@@ -8,11 +8,10 @@ import {
 } from '@mui/material';
 import { BookEntity } from '../../types/book';
 import { StyledTableCell, StyledTableRow } from './BookTable.styled';
-import { useContext } from 'react';
 import { AuthRole } from '../../types/auth';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { useNavigate } from '@tanstack/react-router';
-import { UserRoleContext } from '../../context/UserRoleContext';
+import { useAuthStore } from '../../store/useAuthStore.ts';
 
 interface BookTableProps {
   books: BookEntity[];
@@ -20,7 +19,7 @@ interface BookTableProps {
 
 export const BookTable = ({ books }: BookTableProps) => {
   const navigate = useNavigate();
-  const { user } = useContext(UserRoleContext);
+  const { user } = useAuthStore();
 
   const onDetailsHandler = (id: string) => {
     navigate({ to: `/books/${id}` });
@@ -36,7 +35,7 @@ export const BookTable = ({ books }: BookTableProps) => {
               <StyledTableCell align="left">Title</StyledTableCell>
               <StyledTableCell align="left">Author</StyledTableCell>
               <StyledTableCell align="left">Quantity</StyledTableCell>
-              {user.role === AuthRole.USER ? (
+              {user?.role === AuthRole.USER ? (
                 <StyledTableCell align="left">Details</StyledTableCell>
               ) : null}
             </StyledTableRow>
@@ -50,7 +49,7 @@ export const BookTable = ({ books }: BookTableProps) => {
                 <StyledTableCell align="left">{book.title}</StyledTableCell>
                 <StyledTableCell align="left">{book.author}</StyledTableCell>
                 <StyledTableCell align="left">{book.quantity}</StyledTableCell>
-                {user.role === AuthRole.USER ? (
+                {user?.role === AuthRole.USER ? (
                   <StyledTableCell align="left">
                     <Button onClick={() => onDetailsHandler(book.id)}>
                       <RemoveRedEyeIcon />
