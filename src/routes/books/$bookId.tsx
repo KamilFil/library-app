@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useGetBookQuery } from '../../queries/books/useGetBookQuery';
 import { CircularProgress } from '@mui/material';
 import { SingleBook } from '../../components/BookTable/SingleBook/SingleBook';
+import { authGuard } from '../../auth/authGuard.ts';
 
 const SingleBookView = () => {
   const params = Route.useParams();
@@ -16,4 +17,5 @@ const SingleBookView = () => {
 
 export const Route = createFileRoute('/books/$bookId')({
   component: SingleBookView,
+  beforeLoad: async () => authGuard(),
 });

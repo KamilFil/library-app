@@ -65,8 +65,6 @@ export const SingleBook = ({ data }: SingleBookProps) => {
 
     if (bookPending) return <p>Loading...</p>;
 
-    //dodanie loga!!!!
-
     //powrót na stronę główną
     handleBack();
   };
