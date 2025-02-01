@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root';
 import { Route as IndexImport } from './routes/index';
+import { Route as SignInIndexImport } from './routes/sign-in/index';
 import { Route as BooksIndexImport } from './routes/books/index';
 import { Route as BooksBookIdImport } from './routes/books/$bookId';
 
@@ -20,6 +21,12 @@ import { Route as BooksBookIdImport } from './routes/books/$bookId';
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const SignInIndexRoute = SignInIndexImport.update({
+  id: '/sign-in/',
+  path: '/sign-in/',
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BooksIndexImport;
       parentRoute: typeof rootRoute;
     };
+    '/sign-in/': {
+      id: '/sign-in/';
+      path: '/sign-in';
+      fullPath: '/sign-in';
+      preLoaderRoute: typeof SignInIndexImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
@@ -69,12 +83,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute;
   '/books/$bookId': typeof BooksBookIdRoute;
   '/books': typeof BooksIndexRoute;
+  '/sign-in': typeof SignInIndexRoute;
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute;
   '/books/$bookId': typeof BooksBookIdRoute;
   '/books': typeof BooksIndexRoute;
+  '/sign-in': typeof SignInIndexRoute;
 }
 
 export interface FileRoutesById {
@@ -82,14 +98,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute;
   '/books/$bookId': typeof BooksBookIdRoute;
   '/books/': typeof BooksIndexRoute;
+  '/sign-in/': typeof SignInIndexRoute;
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/' | '/books/$bookId' | '/books';
+  fullPaths: '/' | '/books/$bookId' | '/books' | '/sign-in';
   fileRoutesByTo: FileRoutesByTo;
-  to: '/' | '/books/$bookId' | '/books';
-  id: '__root__' | '/' | '/books/$bookId' | '/books/';
+  to: '/' | '/books/$bookId' | '/books' | '/sign-in';
+  id: '__root__' | '/' | '/books/$bookId' | '/books/' | '/sign-in/';
   fileRoutesById: FileRoutesById;
 }
 
@@ -97,12 +114,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   BooksBookIdRoute: typeof BooksBookIdRoute;
   BooksIndexRoute: typeof BooksIndexRoute;
+  SignInIndexRoute: typeof SignInIndexRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BooksBookIdRoute: BooksBookIdRoute,
   BooksIndexRoute: BooksIndexRoute,
+  SignInIndexRoute: SignInIndexRoute,
 };
 
 export const routeTree = rootRoute
@@ -117,7 +136,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/books/$bookId",
-        "/books/"
+        "/books/",
+        "/sign-in/"
       ]
     },
     "/": {
@@ -128,6 +148,9 @@ export const routeTree = rootRoute
     },
     "/books/": {
       "filePath": "books/index.tsx"
+    },
+    "/sign-in/": {
+      "filePath": "sign-in/index.tsx"
     }
   }
 }
