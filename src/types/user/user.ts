@@ -13,4 +13,4 @@ export type CreateUser = Pick<
   'firstName' | 'lastName' | 'email' | 'password'
 >;
 
-export type UserAuth = Pick<User, 'cardId' | 'role'>;
+export type UserAuth = Pick<User, 'cardId' | 'role' | 'email'>;
