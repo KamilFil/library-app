@@ -1,22 +1,36 @@
-import { Outlet, createRootRoute } from '@tanstack/react-router';
-import { BasicAppBar } from '../components/BasicAppBar/BasicAppBar.tsx';
-import { Footer } from '../components/Footer/Footer.tsx';
-import { Box } from '@mui/material';
+import { createRootRoute, Outlet } from '@tanstack/react-router';
+import { Box, styled } from '@mui/material';
+import { Footer } from '../components/Footer/Footer';
+import { BasicWrapper } from '../components/BasicWrapper';
+import { AuthRole } from '../types/auth';
+import { GuestAppBar } from '../components/AppBars/GuestAppBar/GuestAppBar';
+import { PanelAppBar } from '../components/AppBars/PanelAppBar/PanelAppBar';
 import { Notification } from '../components/Notification/Notification.tsx';
+import { useAuthStore } from '../store/useAuthStore.ts';
 
-const RootComponent = () => {
+export const HomePage = () => {
+  const { user } = useAuthStore();
+
+  const StyledBox = styled(Box)({
+    display: 'flex',
+    justifyContent: 'center',
+  });
+
   return (
-    <>
-      <BasicAppBar />
-      <Box sx={{ marginTop: '75px' }}>
+    <StyledBox>
+      {user?.role === AuthRole.GUEST ? <GuestAppBar /> : null}
+      {user?.role === AuthRole.ADMIN || user?.role === AuthRole.USER ? (
+        <PanelAppBar />
+      ) : null}
+      <BasicWrapper>
         <Outlet />
-      </Box>
+      </BasicWrapper>
       <Footer />
       <Notification />
-    </>
+    </StyledBox>
   );
 };
 
 export const Route = createRootRoute({
-  component: RootComponent,
+  component: HomePage,
 });

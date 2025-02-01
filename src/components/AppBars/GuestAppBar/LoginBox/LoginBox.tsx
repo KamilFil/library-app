@@ -1,7 +1,7 @@
 import LoginIcon from '@mui/icons-material/Login';
 import { StyledLoginBox } from './LoginBox.styled';
-import { useAuth } from '../../../hooks/useAuth.ts';
-import { useAuthStore } from '../../../store/useAuthStore.ts';
+import { useAuthStore } from '../../../../store/useAuthStore';
+import { useAuth } from '../../../../hooks/useAuth';
 
 export const LoginBox = () => {
   const { logout } = useAuth();

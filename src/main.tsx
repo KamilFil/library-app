@@ -22,13 +22,17 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Roboto, Arial, sans-serif',
     allVariants: {
-      color: '#FFFFFF',
+      color: 'black',
     },
   },
 });
 
 const queryClient = new QueryClient();
-const router = createRouter({ routeTree });
+
+export const router = createRouter({
+  routeTree,
+});
+
 declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router;

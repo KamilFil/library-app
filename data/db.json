@@ -19,23 +19,241 @@
       "cardId": "hqwe78dgq23678tufas"
     }
   ],
-  "books":
-  [
+  "books": [
     {
-      "id": "string",
-      "title": "string",
-      "author": "string",
-      "quantity": "number"
+      "id": "23d2",
+      "title": "Mrówka Z 2",
+      "author": "Rafał Orzeł",
+      "quantity": 0,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23d3",
+      "title": "Mrówka Z i Skarb Lasu",
+      "author": "Rafał Orzeł",
+      "quantity": 2,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23d4",
+      "title": "Baśń o Złotym Jabłku",
+      "author": "Andrzej Maj",
+      "quantity": 0,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23d5",
+      "title": "Księga Mądrego Smoka",
+      "author": "Ewa Kwiatkowska",
+      "quantity": 2,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23d6",
+      "title": "Przygody Pszczoły M",
+      "author": "Rafał Orzeł",
+      "quantity": 2,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23d7",
+      "title": "Czarodziejski Młyn",
+      "author": "Jan Kowalski",
+      "quantity": 7,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23d8",
+      "title": "Zagubiony Elf",
+      "author": "Magdalena Nowak",
+      "quantity": 4,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23d9",
+      "title": "Opowieści z Krainy Chmur",
+      "author": "Rafał Orzeł",
+      "quantity": 1,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23da",
+      "title": "Sekret Czerwonego Smoka",
+      "author": "Ewa Kwiatkowska",
+      "quantity": 5,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23db",
+      "title": "Zaczarowana Rzeka",
+      "author": "Andrzej Maj",
+      "quantity": 9,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23dc",
+      "title": "Leśna Symfonia",
+      "author": "Magdalena Nowak",
+      "quantity": 0,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23dd",
+      "title": "Królowa Wróżek",
+      "author": "Jan Kowalski",
+      "quantity": 3,
+      "description": "Lorem ipsum",
+      "year": 2001
     },
     {
       "id": "23de",
-      "title": "Mrówka Z",
-      "author": " Rafał Jastrząb",
-      "quantity": "2"
+      "title": "Gwiazdka nad Bajkowym Lasem",
+      "author": "Rafał Orzeł",
+      "quantity": 7,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23df",
+      "title": "Tajemnica Zielonej Doliny",
+      "author": "Ewa Kwiatkowska",
+      "quantity": 2,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e0",
+      "title": "Królewna i Czarny Kot",
+      "author": "Andrzej Maj",
+      "quantity": 6,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e1",
+      "title": "Baśń o Latającym Statku",
+      "author": "Magdalena Nowak",
+      "quantity": 1,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e2",
+      "title": "Ogród Elfów",
+      "author": "Jan Kowalski",
+      "quantity": 4,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e3",
+      "title": "Podróż Małego Żółwia",
+      "author": "Rafał Orzeł",
+      "quantity": 5,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e4",
+      "title": "Baśnie Księżycowej Doliny",
+      "author": "Ewa Kwiatkowska",
+      "quantity": 8,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e5",
+      "title": "Smocza Przygoda",
+      "author": "Andrzej Maj",
+      "quantity": 0,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e6",
+      "title": "Czarodziejskie Skrzydła",
+      "author": "Magdalena Nowak",
+      "quantity": 9,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e7",
+      "title": "Złoty Klucz i Tajemnicze Drzwi",
+      "author": "Jan Kowalski",
+      "quantity": 3,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e8",
+      "title": "Kot w Butach: Nowa Przygoda",
+      "author": "Rafał Orzeł",
+      "quantity": 7,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23e9",
+      "title": "Opowieści Morskiej Syreny",
+      "author": "Ewa Kwiatkowska",
+      "quantity": 2,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23ea",
+      "title": "Skrzat i Zaginiony Skarb",
+      "author": "Andrzej Maj",
+      "quantity": 10,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23eb",
+      "title": "Baśnie Srebrnego Księżyca",
+      "author": "Magdalena Nowak",
+      "quantity": 1,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23ec",
+      "title": "Tajemnica Czarnego Kruka",
+      "author": "Jan Kowalski",
+      "quantity": 6,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23ed",
+      "title": "Kraina Lodu i Ognia",
+      "author": "Rafał Orzeł",
+      "quantity": 5,
+      "description": "Lorem ipsum",
+      "year": 2001
+    },
+    {
+      "id": "23ee",
+      "title": "Zaczarowany Flet",
+      "author": "Ewa Kwiatkowska",
+      "quantity": 4,
+      "description": "Lorem ipsum",
+      "year": 2001
     }
   ],
-  "rentals":
-  [
+  "rentals": [
     {
       "id": "string",
       "userId": "string",
@@ -47,10 +265,159 @@
       "userId": "fd34",
       "bookId": "54re",
       "rentedAt": "2025-02-01 17:13"
+    },
+    {
+      "id": "3976",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "39b9",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "7810",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "afdd",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "f32f",
+      "userId": "54re",
+      "bookId": "23d2",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "9775",
+      "userId": "54re",
+      "bookId": "23d4",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "9a93",
+      "userId": "54re",
+      "bookId": "23d4",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "c9b8",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "29.01.2025"
+    },
+    {
+      "id": "c03b",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "61cc",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "d15c",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "a23e",
+      "userId": "54re",
+      "bookId": "23d6",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "a115",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "279b",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "6ab6",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "0217",
+      "userId": "54re",
+      "bookId": "23d7",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "0c15",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "228c",
+      "userId": "54re",
+      "bookId": "23d3",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "b4cf",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "c11a",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "81ae",
+      "userId": "54re",
+      "bookId": "23d6",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "49e6",
+      "userId": "54re",
+      "bookId": "23d6",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "f5ae",
+      "userId": "54re",
+      "bookId": "23db",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "4555",
+      "userId": "54re",
+      "bookId": "23d5",
+      "rentedAt": "30.01.2025"
+    },
+    {
+      "id": "98ed",
+      "userId": "54re",
+      "bookId": "23d6",
+      "rentedAt": "30.01.2025"
     }
   ],
-  "logs":
-  [
+  "logs": [
     {
       "id": "string",
       "actionDate": "timestamp",
