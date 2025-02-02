@@ -14,7 +14,7 @@
       "firstName": "John",
       "lastName": "Doe",
       "email": "joe.doe@example.com",
-      "password": "admin",
+      "password": "admin123",
       "role": "admin",
       "cardId": "hqwe78dgq23678tufas"
     }
@@ -419,16 +419,19 @@
   ],
   "logs": [
     {
-      "id": "string",
-      "actionDate": "timestamp",
-      "userEmail": "email",
-      "action": "string/enum"
+      "id": "576a",
+      "email": "test",
+      "type": "error",
+      "typeAction": "Nieudane logowanie",
+      "message": "User not found",
+      "actionDate": "2025-02-02T17:21:10.968Z"
     },
     {
-      "id": "29gf",
-      "actionDate": "2025-02-01 17:13",
-      "userEmail": "joe.doe@example.com",
-      "action": "WYPOŻYCZENIE"
+      "id": "765c",
+      "email": "joe.doe@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-02T18:14:55.266Z"
     }
   ]
 }

@@ -1,3 +1,22 @@
+export interface LogsEntity {
+  id: string;
+  userEmail: string;
+  type: LogType;
+  typeAction: LogActionInfo | LogActionError;
+  message: string;
+  actionDate: string;
+}
+
+export interface PaginatedLogsEntity {
+  first: number;
+  prev: number | null;
+  next: number | null;
+  last: number;
+  pages: number;
+  items: number;
+  data: LogsEntity[];
+}
+
 export enum LogType {
   Info = 'info',
   Error = 'error',

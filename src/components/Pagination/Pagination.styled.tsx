@@ -1,6 +1,6 @@
 import { Box, styled } from '@mui/material';
 
-export const StyledBookPaginationBox = styled(Box)({
+export const StyledPaginationBox = styled(Box)({
   display: 'flex',
   flexWrap: 'nowrap',
   padding: '20px',

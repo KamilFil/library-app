@@ -1,8 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { BookTable } from '../../components/BookTable/BookTable';
 import { booksLoader } from './-loaders';
-import { BookPagination } from '../../components/BookPagination/BookPagination';
-import { QueryClient } from '@tanstack/react-query';
+import { Pagination } from '../../components/Pagination/Pagination.tsx';
 import { authGuard } from '../../auth/authGuard.ts';
 
 const BookList = () => {
@@ -13,7 +12,7 @@ const BookList = () => {
   return (
     <>
       <BookTable books={data} />
-      <BookPagination prev={prev} next={next} />
+      <Pagination prev={prev} next={next} />
     </>
   );
 };
@@ -22,10 +21,6 @@ export type BooksSearch = {
   page: number;
   size: number;
 };
-
-export interface RouteContextInterface {
-  queryClient: QueryClient;
-}
 
 export const Route = createFileRoute('/books/')({
   validateSearch: (search: Record<string, unknown>): BooksSearch => ({

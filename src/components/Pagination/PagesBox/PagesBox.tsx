@@ -1,10 +1,10 @@
 import { Box, Button } from '@mui/material';
-import { BookPaginationProps } from '../BookPagination';
+import { PaginationProps } from '../Pagination.tsx';
 import { Link } from '@tanstack/react-router';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
-export const PagesBox = ({ prev, next }: BookPaginationProps) => {
+export const PagesBox = ({ prev, next }: PaginationProps) => {
   return (
     <Box>
       {prev ? (
