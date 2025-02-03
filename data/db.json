@@ -17,6 +17,15 @@
       "password": "admin123",
       "role": "admin",
       "cardId": "hqwe78dgq23678tufas"
+    },
+    {
+      "id": "9ea6",
+      "email": "piotr@admin.pl",
+      "password": "user12",
+      "lastName": "user12",
+      "firstName": "user12",
+      "cardId": "22osk",
+      "role": "admin"
     }
   ],
   "books": [
@@ -255,166 +264,186 @@
   ],
   "rentals": [
     {
-      "id": "string",
-      "userId": "string",
-      "bookId": "string",
-      "rentedAt": "timestamp | null"
-    },
-    {
       "id": "43de",
       "userId": "fd34",
       "bookId": "54re",
-      "rentedAt": "2025-02-01 17:13"
+      "rentedAt": "2025-02-01 17:13",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "3976",
       "userId": "54re",
       "bookId": "23d2",
-      "rentedAt": "29.01.2025"
+      "rentedAt": "29.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "39b9",
       "userId": "54re",
       "bookId": "23d2",
-      "rentedAt": "29.01.2025"
+      "rentedAt": "29.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "7810",
       "userId": "54re",
       "bookId": "23d2",
-      "rentedAt": "29.01.2025"
+      "rentedAt": "29.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "afdd",
       "userId": "54re",
       "bookId": "23d2",
-      "rentedAt": "29.01.2025"
+      "rentedAt": "29.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "f32f",
       "userId": "54re",
       "bookId": "23d2",
-      "rentedAt": "29.01.2025"
+      "rentedAt": "29.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "9775",
       "userId": "54re",
       "bookId": "23d4",
-      "rentedAt": "29.01.2025"
+      "rentedAt": "29.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "9a93",
       "userId": "54re",
       "bookId": "23d4",
-      "rentedAt": "29.01.2025"
+      "rentedAt": "29.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "c9b8",
       "userId": "54re",
       "bookId": "23d3",
-      "rentedAt": "29.01.2025"
+      "rentedAt": "29.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "c03b",
       "userId": "54re",
       "bookId": "23d3",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "61cc",
       "userId": "54re",
       "bookId": "23d3",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "d15c",
       "userId": "54re",
       "bookId": "23d5",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "a23e",
       "userId": "54re",
       "bookId": "23d6",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "a115",
       "userId": "54re",
       "bookId": "23d5",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "279b",
       "userId": "54re",
       "bookId": "23d5",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "6ab6",
       "userId": "54re",
       "bookId": "23d5",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "0217",
       "userId": "54re",
       "bookId": "23d7",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "0c15",
       "userId": "54re",
       "bookId": "23d3",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "228c",
       "userId": "54re",
       "bookId": "23d3",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "b4cf",
       "userId": "54re",
       "bookId": "23d5",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "c11a",
       "userId": "54re",
       "bookId": "23d5",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "81ae",
       "userId": "54re",
       "bookId": "23d6",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": "10.02.2025"
     },
     {
       "id": "49e6",
       "userId": "54re",
       "bookId": "23d6",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": null
     },
     {
       "id": "f5ae",
       "userId": "54re",
       "bookId": "23db",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": null
     },
     {
       "id": "4555",
       "userId": "54re",
       "bookId": "23d5",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": null
     },
     {
       "id": "98ed",
       "userId": "54re",
       "bookId": "23d6",
-      "rentedAt": "30.01.2025"
+      "rentedAt": "30.01.2025",
+      "returnedAt": null
     }
   ],
   "logs": [
@@ -432,6 +461,41 @@
       "type": "info",
       "typeAction": "Logowanie",
       "actionDate": "2025-02-02T18:14:55.266Z"
+    },
+    {
+      "id": "b4bb",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Rejestracja",
+      "actionDate": "2025-02-03T15:45:42.186Z"
+    },
+    {
+      "id": "a013",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-03T15:45:51.109Z"
+    },
+    {
+      "id": "dea4",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-03T15:46:13.614Z"
+    },
+    {
+      "id": "bc1c",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-03T15:47:43.797Z"
+    },
+    {
+      "id": "c9ab",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-03T15:47:50.446Z"
     }
   ]
 }
