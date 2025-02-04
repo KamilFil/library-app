@@ -16,6 +16,7 @@ interface InfoDialogProps {
   dialogTitle: string;
   dialogTitleId: string;
   dialogText: string;
+  onClick?: () => void;
 }
 
 export const InfoDialog = ({

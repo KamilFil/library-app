@@ -6,7 +6,6 @@ export interface PaginationProps {
   prev: number | null;
   next: number | null;
 }
-
 export const Pagination = ({ prev, next }: PaginationProps) => {
   return (
     <StyledPaginationBox>

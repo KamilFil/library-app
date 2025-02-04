@@ -1,4 +1,4 @@
-import { PaginatedLogsEntity } from '../../../types/log.ts';
+import { PaginatedLogsEntity } from '../types/log.ts';
 
 const API_URL = import.meta.env.VITE_API_URL;
 

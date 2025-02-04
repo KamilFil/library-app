@@ -15,7 +15,11 @@ export const PagesBox = ({ prev, next }: PaginationProps) => {
             page: (prev.page || 0) - 1,
           })}
         >
-          <Button variant="contained" startIcon={<ArrowLeftIcon />}>
+          <Button
+            disabled={!prev}
+            variant="contained"
+            startIcon={<ArrowLeftIcon />}
+          >
             Previous Page
           </Button>
         </Link>
@@ -28,7 +32,11 @@ export const PagesBox = ({ prev, next }: PaginationProps) => {
             page: (prev.page || 0) + 1,
           })}
         >
-          <Button variant="contained" endIcon={<ArrowRightIcon />}>
+          <Button
+            disabled={!next}
+            variant="contained"
+            endIcon={<ArrowRightIcon />}
+          >
             Next Page
           </Button>
         </Link>

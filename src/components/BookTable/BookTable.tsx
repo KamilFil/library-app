@@ -14,6 +14,10 @@ import { useNavigate } from '@tanstack/react-router';
 import { useAuthStore } from '../../store/useAuthStore.ts';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
+import { InfoDialog } from '../InfoDialog/InfoDialog.tsx';
+import { DialogType } from '../../types/dialog.ts';
+import { useState } from 'react';
+import { useDeleteBookMutation } from '../../queries/books/useDeleteBookMutation.ts';
 
 interface BookTableProps {
   books: BookEntity[];
@@ -22,6 +26,21 @@ interface BookTableProps {
 export const BookTable = ({ books }: BookTableProps) => {
   const navigate = useNavigate();
   const { user } = useAuthStore();
+  const [isOpenModal, setOpenModal] = useState(false);
+  const { mutate } = useDeleteBookMutation();
+
+  const handleDisagree = () => {
+    setOpenModal(false);
+  };
+  const handleDelete = (bookId: string) => {
+    mutate(bookId);
+    setOpenModal(false);
+  };
+
+  const onDeleteHandler = (bookId: string) => {
+    setOpenModal(true);
+    handleDelete(bookId);
+  };
 
   const onDetailsHandler = (id: string) => {
     navigate({ to: `/books/${id}` });
@@ -61,14 +80,22 @@ export const BookTable = ({ books }: BookTableProps) => {
                   )}
                   {user?.role === AuthRole.ADMIN ? (
                     <>
-                      <Button onClick={() => onDetailsHandler(book.id)}>
+                      <Button onClick={() => onDeleteHandler(book.id)}>
                         <EditIcon color="info" />
                       </Button>
-                      <Button onClick={() => onDetailsHandler(book.id)}>
+                      <Button onClick={() => onDeleteHandler(book.id)}>
                         <DeleteForeverIcon color="error" />
                       </Button>
                     </>
                   ) : null}
+                  <InfoDialog
+                    open={isOpenModal}
+                    handleDisagree={handleDisagree}
+                    type={DialogType.INFO}
+                    dialogTitle={'Book delete'}
+                    dialogTitleId={`${book.id}-book-remove-avilable`}
+                    dialogText={'Are you sure you want to delete  this book?'}
+                  />
                 </StyledTableCell>
               </StyledTableRow>
             ))}

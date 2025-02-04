@@ -1,7 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { authGuard } from '../../auth/authGuard.ts';
-import { Logs } from '../../components/Logs/Logs.tsx';
-import { logsLoader } from './-loaders';
+import { Logs } from '../../views/Logs/Logs.tsx';
 
 export type PaginationSearch = {
   page: number;
@@ -15,6 +14,5 @@ export const Route = createFileRoute('/logs/')({
     size: Number(search?.size ?? 5),
   }),
   loaderDeps: ({ search }) => ({ page: search.page, size: search.size }),
-  loader: ({ deps: { page, size } }) => logsLoader(page, size),
   beforeLoad: async () => authGuard('admin'),
 });
