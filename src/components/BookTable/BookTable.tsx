@@ -12,6 +12,8 @@ import { AuthRole } from '../../types/auth';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { useNavigate } from '@tanstack/react-router';
 import { useAuthStore } from '../../store/useAuthStore.ts';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
 
 interface BookTableProps {
   books: BookEntity[];
@@ -35,9 +37,9 @@ export const BookTable = ({ books }: BookTableProps) => {
               <StyledTableCell align="left">Title</StyledTableCell>
               <StyledTableCell align="left">Author</StyledTableCell>
               <StyledTableCell align="left">Quantity</StyledTableCell>
-              {user?.role === AuthRole.USER ? (
-                <StyledTableCell align="left">Details</StyledTableCell>
-              ) : null}
+              {[AuthRole.USER, AuthRole.ADMIN].includes(
+                user?.role as AuthRole,
+              ) && <StyledTableCell align="center">Actions</StyledTableCell>}
             </StyledTableRow>
           </TableHead>
           <TableBody>
@@ -49,13 +51,25 @@ export const BookTable = ({ books }: BookTableProps) => {
                 <StyledTableCell align="left">{book.title}</StyledTableCell>
                 <StyledTableCell align="left">{book.author}</StyledTableCell>
                 <StyledTableCell align="left">{book.quantity}</StyledTableCell>
-                {user?.role === AuthRole.USER ? (
-                  <StyledTableCell align="left">
+                <StyledTableCell align="center">
+                  {[AuthRole.USER, AuthRole.ADMIN].includes(
+                    user?.role as AuthRole,
+                  ) && (
                     <Button onClick={() => onDetailsHandler(book.id)}>
                       <RemoveRedEyeIcon />
                     </Button>
-                  </StyledTableCell>
-                ) : null}
+                  )}
+                  {user?.role === AuthRole.ADMIN ? (
+                    <>
+                      <Button onClick={() => onDetailsHandler(book.id)}>
+                        <EditIcon color="info" />
+                      </Button>
+                      <Button onClick={() => onDetailsHandler(book.id)}>
+                        <DeleteForeverIcon color="error" />
+                      </Button>
+                    </>
+                  ) : null}
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
