@@ -7,16 +7,24 @@ import {
   StyledPanelAppBarUserDataBox,
 } from './PanelAppBar.styled';
 import { useAuthStore } from '../../../store/useAuthStore';
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { LogoBox } from '../GuestAppBar/LogoBox/LogoBox';
 import { AuthRole } from '../../../types/auth';
 import { UserMenu } from './UserMenu/UserMenu';
 import { AdminMenu } from './AdminMenu/AdminMenu';
+import { useAuth } from '../../../hooks/useAuth';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { DeleteUser } from '../../User/DeleteUser/DeleteUser';
 
 export const PanelAppBar = () => {
   const { user } = useAuthStore();
+  const { logout } = useAuth();
 
   if (!user) return <p>No user</p>;
+
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <StyledPanelAppBarBox sx={{ display: 'flex', zIndex: '0' }}>
@@ -61,6 +69,27 @@ export const PanelAppBar = () => {
           <Divider />
           {user.role === AuthRole.USER ? <UserMenu /> : null}
           {user.role === AuthRole.ADMIN ? <AdminMenu /> : null}
+        </Box>
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: 'flex',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            marginBottom: '50px',
+            flexDirection: 'column',
+            gap: '20px',
+          }}
+        >
+          <Button
+            startIcon={<LogoutIcon />}
+            onClick={() => handleLogout()}
+            variant="outlined"
+            sx={{ color: 'red', borderColor: 'red' }}
+          >
+            Logout
+          </Button>
+          {user.role === AuthRole.ADMIN ? null : <DeleteUser />}
         </Box>
       </StyledPanelAppBarDrawer>
     </StyledPanelAppBarBox>

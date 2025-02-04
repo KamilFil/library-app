@@ -5,6 +5,6 @@ export const redirectIfLoggedIn = () => {
   const { isAuthenticated } = useAuthStore.getState();
 
   if (isAuthenticated) {
-    throw redirect({ to: '/' });
+    throw redirect({ to: '/books', search: { page: 1, size: 5 } });
   }
 };

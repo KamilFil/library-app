@@ -12,16 +12,25 @@
 
 import { Route as rootRoute } from './routes/__root';
 import { Route as IndexImport } from './routes/index';
+import { Route as UserIndexImport } from './routes/user/index';
 import { Route as SignInIndexImport } from './routes/sign-in/index';
 import { Route as LogsIndexImport } from './routes/logs/index';
 import { Route as BooksIndexImport } from './routes/books/index';
 import { Route as BooksBookIdImport } from './routes/books/$bookId';
+import { Route as UserMystatsIndexImport } from './routes/user/my_stats/index';
+import { Route as UserMybooksIndexImport } from './routes/user/my_books/index';
 
 // Create/Update Routes
 
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const UserIndexRoute = UserIndexImport.update({
+  id: '/user/',
+  path: '/user/',
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -46,6 +55,18 @@ const BooksIndexRoute = BooksIndexImport.update({
 const BooksBookIdRoute = BooksBookIdImport.update({
   id: '/books/$bookId',
   path: '/books/$bookId',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const UserMystatsIndexRoute = UserMystatsIndexImport.update({
+  id: '/user/my_stats/',
+  path: '/user/my_stats/',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const UserMybooksIndexRoute = UserMybooksIndexImport.update({
+  id: '/user/my_books/',
+  path: '/user/my_books/',
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -88,6 +109,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignInIndexImport;
       parentRoute: typeof rootRoute;
     };
+    '/user/': {
+      id: '/user/';
+      path: '/user';
+      fullPath: '/user';
+      preLoaderRoute: typeof UserIndexImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/user/my_books/': {
+      id: '/user/my_books/';
+      path: '/user/my_books';
+      fullPath: '/user/my_books';
+      preLoaderRoute: typeof UserMybooksIndexImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/user/my_stats/': {
+      id: '/user/my_stats/';
+      path: '/user/my_stats';
+      fullPath: '/user/my_stats';
+      preLoaderRoute: typeof UserMystatsIndexImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
@@ -99,6 +141,9 @@ export interface FileRoutesByFullPath {
   '/books': typeof BooksIndexRoute;
   '/logs': typeof LogsIndexRoute;
   '/sign-in': typeof SignInIndexRoute;
+  '/user': typeof UserIndexRoute;
+  '/user/my_books': typeof UserMybooksIndexRoute;
+  '/user/my_stats': typeof UserMystatsIndexRoute;
 }
 
 export interface FileRoutesByTo {
@@ -107,6 +152,9 @@ export interface FileRoutesByTo {
   '/books': typeof BooksIndexRoute;
   '/logs': typeof LogsIndexRoute;
   '/sign-in': typeof SignInIndexRoute;
+  '/user': typeof UserIndexRoute;
+  '/user/my_books': typeof UserMybooksIndexRoute;
+  '/user/my_stats': typeof UserMystatsIndexRoute;
 }
 
 export interface FileRoutesById {
@@ -116,14 +164,42 @@ export interface FileRoutesById {
   '/books/': typeof BooksIndexRoute;
   '/logs/': typeof LogsIndexRoute;
   '/sign-in/': typeof SignInIndexRoute;
+  '/user/': typeof UserIndexRoute;
+  '/user/my_books/': typeof UserMybooksIndexRoute;
+  '/user/my_stats/': typeof UserMystatsIndexRoute;
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/' | '/books/$bookId' | '/books' | '/logs' | '/sign-in';
+  fullPaths:
+    | '/'
+    | '/books/$bookId'
+    | '/books'
+    | '/logs'
+    | '/sign-in'
+    | '/user'
+    | '/user/my_books'
+    | '/user/my_stats';
   fileRoutesByTo: FileRoutesByTo;
-  to: '/' | '/books/$bookId' | '/books' | '/logs' | '/sign-in';
-  id: '__root__' | '/' | '/books/$bookId' | '/books/' | '/logs/' | '/sign-in/';
+  to:
+    | '/'
+    | '/books/$bookId'
+    | '/books'
+    | '/logs'
+    | '/sign-in'
+    | '/user'
+    | '/user/my_books'
+    | '/user/my_stats';
+  id:
+    | '__root__'
+    | '/'
+    | '/books/$bookId'
+    | '/books/'
+    | '/logs/'
+    | '/sign-in/'
+    | '/user/'
+    | '/user/my_books/'
+    | '/user/my_stats/';
   fileRoutesById: FileRoutesById;
 }
 
@@ -133,6 +209,9 @@ export interface RootRouteChildren {
   BooksIndexRoute: typeof BooksIndexRoute;
   LogsIndexRoute: typeof LogsIndexRoute;
   SignInIndexRoute: typeof SignInIndexRoute;
+  UserIndexRoute: typeof UserIndexRoute;
+  UserMybooksIndexRoute: typeof UserMybooksIndexRoute;
+  UserMystatsIndexRoute: typeof UserMystatsIndexRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -141,6 +220,9 @@ const rootRouteChildren: RootRouteChildren = {
   BooksIndexRoute: BooksIndexRoute,
   LogsIndexRoute: LogsIndexRoute,
   SignInIndexRoute: SignInIndexRoute,
+  UserIndexRoute: UserIndexRoute,
+  UserMybooksIndexRoute: UserMybooksIndexRoute,
+  UserMystatsIndexRoute: UserMystatsIndexRoute,
 };
 
 export const routeTree = rootRoute
@@ -157,7 +239,10 @@ export const routeTree = rootRoute
         "/books/$bookId",
         "/books/",
         "/logs/",
-        "/sign-in/"
+        "/sign-in/",
+        "/user/",
+        "/user/my_books/",
+        "/user/my_stats/"
       ]
     },
     "/": {
@@ -174,6 +259,15 @@ export const routeTree = rootRoute
     },
     "/sign-in/": {
       "filePath": "sign-in/index.tsx"
+    },
+    "/user/": {
+      "filePath": "user/index.tsx"
+    },
+    "/user/my_books/": {
+      "filePath": "user/my_books/index.tsx"
+    },
+    "/user/my_stats/": {
+      "filePath": "user/my_stats/index.tsx"
     }
   }
 }
