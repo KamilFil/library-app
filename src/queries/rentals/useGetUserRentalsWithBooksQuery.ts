@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useApi } from '../../api/useApi.ts';
 import { RentalWithBookEntity } from '../../types/rental.ts';
 
-export const useGetUserRentalsWithBooksQuery = (userId: string) => {
+export const useGetUserRentalsWithBooksQuery = (userId: string | undefined) => {
   const { apiGet } = useApi();
 
   const { data, isFetching } = useQuery<RentalWithBookEntity[]>({

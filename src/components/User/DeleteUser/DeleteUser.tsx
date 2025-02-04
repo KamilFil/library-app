@@ -11,7 +11,7 @@ import { useAuth } from '../../../hooks/useAuth';
 export const DeleteUser = () => {
   const { user } = useAuthStore();
   const { data: rentals, isFetching } = useGetUserRentalsWithBooksQuery(
-    user!.id,
+    user?.id,
   );
   const { logout } = useAuth();
   const [isOpenModal, setOpenModal] = useState(false);
