@@ -2112,6 +2112,48 @@
       "type": "info",
       "typeAction": "Wylogowanie",
       "actionDate": "2025-02-05T15:56:13.295Z"
+    },
+    {
+      "id": "2b33",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T16:13:54.991Z"
+    },
+    {
+      "id": "319b",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T16:14:18.831Z"
+    },
+    {
+      "id": "e848",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T16:14:31.846Z"
+    },
+    {
+      "id": "660c",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T16:14:34.846Z"
+    },
+    {
+      "id": "c05d",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T16:16:06.830Z"
+    },
+    {
+      "id": "a1cf",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T16:16:18.392Z"
     }
   ]
 }
