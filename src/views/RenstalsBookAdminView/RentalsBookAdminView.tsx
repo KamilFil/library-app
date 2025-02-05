@@ -4,6 +4,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Tooltip,
   Typography,
 } from '@mui/material';
 import { Pagination } from '../../components/Pagination/Pagination.tsx';
@@ -11,6 +12,8 @@ import { useSearch } from '@tanstack/react-router';
 import { useGetUserRentalsBooks } from '../../queries/rentals/useGetUserRentalsBooks.ts';
 import { StyledTableCell, StyledTableRow } from '../Logs/Logs.styled.tsx';
 import { isOverdueRental } from '../../utils/isOverdueRental.ts';
+import FmdBadIcon from '@mui/icons-material/FmdBad';
+import GppGoodIcon from '@mui/icons-material/GppGood';
 
 export const RentalsBookAdminView = () => {
   const search = useSearch({ from: '/admin/rentals/' });
@@ -37,32 +40,48 @@ export const RentalsBookAdminView = () => {
               <StyledTableCell align="left">Book title</StyledTableCell>
               <StyledTableCell align="left">Rented at</StyledTableCell>
               <StyledTableCell align="left">Username</StyledTableCell>
+              <StyledTableCell align="left">Status</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data.map((rentals) => (
               <StyledTableRow
                 key={rentals.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                sx={{
+                  backgroundColor: isOverdueRental(rentals).isOverdue
+                    ? '#fb8989'
+                    : '',
+                  '&:last-child td, &:last-child th': { border: 0 },
+                }}
               >
                 <StyledTableCell align="left">{rentals.id}</StyledTableCell>
                 <StyledTableCell align="left">
                   {rentals?.book ? rentals.book.title : 'Brak książki'}
                 </StyledTableCell>
-                <StyledTableCell
-                  sx={{
-                    backgroundColor: isOverdueRental(rentals).isOverdue
-                      ? 'red'
-                      : '',
-                  }}
-                  align="left"
-                >
+                <StyledTableCell align="left">
                   {rentals.rentedAt}
                 </StyledTableCell>
                 <StyledTableCell align="left">
                   {rentals?.user
                     ? `${rentals.user.firstName} ${rentals.user.lastName}`
                     : 'Użytkownik usunięty'}{' '}
+                </StyledTableCell>
+                <StyledTableCell align="left">
+                  {isOverdueRental(rentals).daysDifference ? (
+                    <Tooltip
+                      title={`Opóźnione o ${isOverdueRental(rentals).daysDifference} dni`}
+                    >
+                      <span>
+                        <FmdBadIcon color="error" />
+                      </span>
+                    </Tooltip>
+                  ) : (
+                    <Tooltip title={`Brak opóźnienia`}>
+                      <span>
+                        <GppGoodIcon color="success" />
+                      </span>
+                    </Tooltip>
+                  )}
                 </StyledTableCell>
               </StyledTableRow>
             ))}

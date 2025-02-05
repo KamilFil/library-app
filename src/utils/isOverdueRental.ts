@@ -8,10 +8,10 @@ export const isOverdueRental = (data: RentalEntity) => {
     : new Date();
 
   const diffInTime = compareDate.getTime() - rentedAt.getTime();
-  const diffInDays = diffInTime / (1000 * 60 * 60 * 24);
+  const diffInDays = Math.floor(diffInTime / (1000 * 60 * 60 * 24));
 
   return {
-    daysDifference: diffInDays,
+    daysDifference: diffInDays > 14 ? diffInDays - 14 : null,
     isOverdue: diffInDays > 14,
   };
 };
