@@ -89,6 +89,16 @@
       "cardId": "3q35s",
       "role": "user",
       "isDeleted": true
+    },
+    {
+      "id": "1125",
+      "email": "usertest@o2.pl",
+      "password": "user12",
+      "lastName": "user12",
+      "firstName": "user12",
+      "cardId": "y5tvyp",
+      "role": "user",
+      "isDeleted": true
     }
   ],
   "books": [
@@ -682,6 +692,13 @@
       "rentedAt": "5.02.2025",
       "returnedAt": "5.02.2025",
       "id": "878e"
+    },
+    {
+      "userId": "1125",
+      "bookId": "23d3",
+      "rentedAt": "5.02.2025",
+      "returnedAt": "5.02.2025",
+      "id": "479c"
     }
   ],
   "logs": [
@@ -1968,6 +1985,133 @@
       "type": "info",
       "typeAction": "Usunięcie użytkownika",
       "actionDate": "2025-02-05T15:28:32.948Z"
+    },
+    {
+      "id": "711d",
+      "email": "test@.pl",
+      "type": "error",
+      "typeAction": "Nieudane logowanie",
+      "message": "User not found",
+      "actionDate": "2025-02-05T15:33:42.499Z"
+    },
+    {
+      "id": "dc00",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T15:33:48.985Z"
+    },
+    {
+      "id": "96b5",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:34:00.265Z"
+    },
+    {
+      "id": "7486",
+      "email": "usertest@o2.pl",
+      "type": "info",
+      "typeAction": "Rejestracja",
+      "actionDate": "2025-02-05T15:34:26.230Z"
+    },
+    {
+      "id": "13f0",
+      "email": "usertest@o2.pl",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-05T15:34:33.455Z"
+    },
+    {
+      "id": "6042",
+      "email": "usertest@o2.pl",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-05T15:34:36.877Z"
+    },
+    {
+      "id": "854b",
+      "email": "usertest@o2.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:35:03.969Z"
+    },
+    {
+      "id": "664c",
+      "email": "usertest@o2.pl",
+      "type": "info",
+      "typeAction": "Usunięcie użytkownika",
+      "actionDate": "2025-02-05T15:35:03.996Z"
+    },
+    {
+      "id": "d232",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T15:35:17.721Z"
+    },
+    {
+      "id": "a543",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:41:30.033Z"
+    },
+    {
+      "id": "a70c",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T15:42:33.120Z"
+    },
+    {
+      "id": "9aee",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:42:37.241Z"
+    },
+    {
+      "id": "f916",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T15:42:43.400Z"
+    },
+    {
+      "id": "3f5f",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:42:48.401Z"
+    },
+    {
+      "id": "fd1b",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T15:43:01.324Z"
+    },
+    {
+      "id": "fed0",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:43:03.313Z"
+    },
+    {
+      "id": "6963",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T15:47:16.067Z"
+    },
+    {
+      "id": "7dc0",
+      "email": "piotr@user.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:56:13.295Z"
     }
   ]
 }

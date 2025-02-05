@@ -57,12 +57,7 @@ export const LoginForm = ({ handleSwitchForm }: Props) => {
       <Button type="submit" variant="contained" color="primary">
         Logowanie
       </Button>
-      <Button
-        type="submit"
-        variant="outlined"
-        color="primary"
-        onClick={handleSwitchForm}
-      >
+      <Button variant="outlined" color="primary" onClick={handleSwitchForm}>
         Utwórz konto
       </Button>
     </Box>
