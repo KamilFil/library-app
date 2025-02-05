@@ -39,7 +39,7 @@ export const AdminMenu = () => {
         <ListItem disablePadding>
           <ListItemButton
             onClick={() =>
-              navigate({ to: '/logs', search: { page: 1, size: 5 } })
+              navigate({ to: '/admin/logs', search: { page: 1, size: 5 } })
             }
           >
             <ListItemIcon>

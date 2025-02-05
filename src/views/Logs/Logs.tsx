@@ -11,7 +11,7 @@ import { useSearch } from '@tanstack/react-router';
 import { useGetLogsQuery } from '../../queries/logs/useGetLogsQuery.ts';
 
 export const Logs = () => {
-  const search = useSearch({ from: '/logs/' });
+  const search = useSearch({ from: '/admin/logs/' });
   const page = Number(search.page ?? 1);
   const size = Number(search.size ?? 5);
   const { data } = useGetLogsQuery(page, size);
