@@ -79,6 +79,16 @@
       "cardId": "vh5cys",
       "role": "user",
       "isDeleted": true
+    },
+    {
+      "id": "43d2",
+      "email": "test@test.test",
+      "password": "user12",
+      "lastName": "user12",
+      "firstName": "user12",
+      "cardId": "3q35s",
+      "role": "user",
+      "isDeleted": true
     }
   ],
   "books": [
@@ -651,6 +661,27 @@
       "rentedAt": "4.02.2025",
       "returnedAt": "4.02.2025",
       "id": "3034"
+    },
+    {
+      "userId": "af15",
+      "bookId": "23d6",
+      "rentedAt": "5.02.2025",
+      "returnedAt": "5.02.2025",
+      "id": "9b17"
+    },
+    {
+      "userId": "43d2",
+      "bookId": "23db",
+      "rentedAt": "5.02.2025",
+      "returnedAt": "5.02.2025",
+      "id": "230b"
+    },
+    {
+      "userId": "43d2",
+      "bookId": "23db",
+      "rentedAt": "5.02.2025",
+      "returnedAt": "5.02.2025",
+      "id": "878e"
     }
   ],
   "logs": [
@@ -1839,6 +1870,104 @@
       "type": "info",
       "typeAction": "Usunięcie użytkownika",
       "actionDate": "2025-02-04T20:08:08.162Z"
+    },
+    {
+      "id": "3541",
+      "email": "test@delete.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T15:24:17.605Z"
+    },
+    {
+      "id": "0d0a",
+      "email": "test@delete.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:24:21.290Z"
+    },
+    {
+      "id": "98a3",
+      "email": "test@delete.pl",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-05T15:24:27.697Z"
+    },
+    {
+      "id": "7c85",
+      "email": "test@delete.pl",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-05T15:27:04.065Z"
+    },
+    {
+      "id": "2d4b",
+      "email": "test@delete.pl",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-05T15:27:13.093Z"
+    },
+    {
+      "id": "f52b",
+      "email": "test@delete.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:27:20.450Z"
+    },
+    {
+      "id": "8139",
+      "email": "test@delete.pl",
+      "type": "info",
+      "typeAction": "Usunięcie użytkownika",
+      "actionDate": "2025-02-05T15:27:20.487Z"
+    },
+    {
+      "id": "ed61",
+      "email": "test@test.test",
+      "type": "info",
+      "typeAction": "Rejestracja",
+      "actionDate": "2025-02-05T15:27:58.399Z"
+    },
+    {
+      "id": "6fa0",
+      "email": "test@test.test",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-05T15:28:06.362Z"
+    },
+    {
+      "id": "e9af",
+      "email": "test@test.test",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-05T15:28:16.794Z"
+    },
+    {
+      "id": "8941",
+      "email": "test@test.test",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-05T15:28:19.794Z"
+    },
+    {
+      "id": "557d",
+      "email": "test@test.test",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-05T15:28:26.962Z"
+    },
+    {
+      "id": "59c6",
+      "email": "test@test.test",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T15:28:32.922Z"
+    },
+    {
+      "id": "2b0a",
+      "email": "test@test.test",
+      "type": "info",
+      "typeAction": "Usunięcie użytkownika",
+      "actionDate": "2025-02-05T15:28:32.948Z"
     }
   ]
 }
