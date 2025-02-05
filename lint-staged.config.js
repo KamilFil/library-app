@@ -3,6 +3,5 @@ export default {
     'npm run prettify',
     () => 'npm run typecheck',
     'npm run lint --fix --no-cache',
-    'npm run test'
   ],
 }

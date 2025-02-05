@@ -99,6 +99,26 @@
       "cardId": "y5tvyp",
       "role": "user",
       "isDeleted": true
+    },
+    {
+      "id": "0809",
+      "email": "user@example.com",
+      "password": "user12",
+      "lastName": "user12",
+      "firstName": "super12",
+      "cardId": "zo92l",
+      "role": "user",
+      "isDeleted": false
+    },
+    {
+      "id": "bf60",
+      "email": "qeqweqweqwe",
+      "password": "qeqweqweeqe",
+      "lastName": "qeqwqweqwe",
+      "firstName": "qweqweqwqwe",
+      "cardId": "e3vgu8",
+      "role": "user",
+      "isDeleted": false
     }
   ],
   "books": [
@@ -2154,6 +2174,65 @@
       "type": "info",
       "typeAction": "Logowanie",
       "actionDate": "2025-02-05T16:16:18.392Z"
+    },
+    {
+      "id": "5aa0",
+      "email": "piotr@admin.pl",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T17:55:25.750Z"
+    },
+    {
+      "id": "9bd7",
+      "email": "asasasas",
+      "type": "error",
+      "typeAction": "Nieudane logowanie",
+      "message": "User not found",
+      "actionDate": "2025-02-05T18:02:52.692Z"
+    },
+    {
+      "id": "eec3",
+      "email": "asasasas",
+      "type": "error",
+      "typeAction": "Nieudane logowanie",
+      "message": "User not found",
+      "actionDate": "2025-02-05T18:07:02.327Z"
+    },
+    {
+      "id": "4f8e",
+      "email": "user@example.com",
+      "type": "info",
+      "typeAction": "Rejestracja",
+      "actionDate": "2025-02-05T18:13:01.200Z"
+    },
+    {
+      "id": "0065",
+      "email": "user@example.com",
+      "type": "error",
+      "typeAction": "Nieudana rejestracja",
+      "message": "User already exists",
+      "actionDate": "2025-02-05T18:14:38.907Z"
+    },
+    {
+      "id": "a65e",
+      "email": "user@example.com",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T18:15:03.348Z"
+    },
+    {
+      "id": "803f",
+      "email": "qeqweqweqwe",
+      "type": "info",
+      "typeAction": "Rejestracja",
+      "actionDate": "2025-02-05T18:15:26.368Z"
+    },
+    {
+      "id": "d940",
+      "email": "qeqweqweqwe",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-05T18:15:35.844Z"
     }
   ]
 }

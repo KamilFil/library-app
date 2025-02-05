@@ -6,7 +6,8 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
-      exclude: ['e2e', ...configDefaults.exclude],
+      include: ['src/**/*.test.ts'],
+      exclude: ['**/e2e/**', ...configDefaults.exclude],
     },
   }),
 );
