@@ -5,31 +5,31 @@ import {
   StyledSingleBookBox,
   StyledSingleBookContainer,
 } from './SingleBook.styled';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useCreateRentalMutation } from '../../../queries/rentals/useCreateRentalMutation';
-import { usePutBookMutation } from '../../../queries/books/usePutBookQuery';
-import { UserRoleContext } from '../../../context/UserRoleContext';
+import { usePutBookMutation } from '../../../queries/books/usePutBookMutation';
 import { InfoDialog } from '../../InfoDialog/InfoDialog';
 import { DialogType } from '../../../types/dialog';
+import { useAuthStore } from '../../../store/useAuthStore';
 
 interface SingleBookProps {
   data: BookEntity;
 }
 
 export const SingleBook = ({ data }: SingleBookProps) => {
-  const { user } = useContext(UserRoleContext);
-  const navigate = useNavigate();
-
-  const [isOpenModal, setOpenModal] = useState(false);
-  const [isNoBookOpenModal, setNoBookOpenModal] = useState(false);
-
   const { mutate: rentalMutate, isPending: rentalPending } =
     useCreateRentalMutation();
   const { mutate: bookMutate, isPending: bookPending } = usePutBookMutation(
     data.id,
   );
+  const { user } = useAuthStore();
+  const [isOpenModal, setOpenModal] = useState(false);
+  const [isNoBookOpenModal, setNoBookOpenModal] = useState(false);
+  const navigate = useNavigate();
+
+  if (!user) return <p>No user.</p>;
 
   const handleBack = () => {
     navigate({ to: '..' });
@@ -48,24 +48,20 @@ export const SingleBook = ({ data }: SingleBookProps) => {
   };
 
   const handleRentBook = (bookId: string, bookQuantity: number) => {
-    //dodanie do rental,
     rentalMutate({
       userId: user.id,
-      bookId: bookId,
+      bookId,
       rentedAt: new Date().toLocaleDateString(),
+      returnedAt: null,
     });
 
-    if (rentalPending) return <p>Loading...</p>;
-
-    //zmiana quantity w książkach
     bookMutate({
       ...data,
       quantity: bookQuantity - 1,
     });
 
-    if (bookPending) return <p>Loading...</p>;
+    if (rentalPending || bookPending) return <p>Loading...</p>;
 
-    //powrót na stronę główną
     handleBack();
   };
 

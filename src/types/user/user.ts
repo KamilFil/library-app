@@ -6,6 +6,7 @@ export interface User {
   password: string;
   role: string;
   cardId: string;
+  isDeleted: boolean;
 }
 
 export type CreateUser = Pick<
@@ -13,4 +14,12 @@ export type CreateUser = Pick<
   'firstName' | 'lastName' | 'email' | 'password'
 >;
 
-export type UserAuth = Pick<User, 'cardId' | 'role' | 'email'>;
+export type UserAuth = Pick<User, 'cardId' | 'role' | 'email' | 'id'>;
+
+export type UserNoPassword = Omit<User, 'password'>;
+
+export type UserDto = Omit<User, 'id'>;
+
+export type UserArchiveDto = {
+  isDeleted: boolean;
+};

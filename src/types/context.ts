@@ -1,4 +1,4 @@
-import { UserNoPassword } from './user';
+import { UserNoPassword } from './user/user';
 
 export interface UserRoleContextInterface {
   user: UserNoPassword;
@@ -12,4 +12,5 @@ export const mockUser: UserNoPassword = {
   email: 'joe.doe@example.com',
   role: 'admin',
   cardId: 'hqwe78dgq23678tufas',
+  isDeleted: false,
 };

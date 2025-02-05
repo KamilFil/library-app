@@ -58,12 +58,7 @@ export const RegisterForm = ({ handleSwitchForm }: Props) => {
       <Button type="submit" variant="contained" color="primary">
         Rejestracja
       </Button>
-      <Button
-        type="submit"
-        variant="outlined"
-        color="primary"
-        onClick={handleSwitchForm}
-      >
+      <Button variant="outlined" color="primary" onClick={handleSwitchForm}>
         Mam już konto
       </Button>
     </StyledBox>

@@ -26,7 +26,8 @@ export const useAuth = () => {
 
       const newUser = user as User;
       newUser.cardId = Math.random().toString(36).substring(7);
-      newUser.role = AuthRole.GUEST;
+      newUser.role = AuthRole.USER;
+      newUser.isDeleted = false;
 
       const createdUser = await apiPost<UserAuth, User>('users', newUser);
 
@@ -34,13 +35,14 @@ export const useAuth = () => {
         cardId: createdUser.cardId,
         role: createdUser.role,
         email: createdUser.email,
+        id: createdUser.id,
       };
     },
     onSuccess: async (data) => {
       setUser(data);
       logInfo(data.email, LogActionInfo.Register);
       showNotification('Konto zostało utworzone!', 'success');
-      await navigate({ to: '/' });
+      await navigate({ to: '/books', search: { page: 1, size: 5 } });
     },
     onError: (error: Error, data) => {
       logError(data.email, LogActionError.Register, error.message);
@@ -70,13 +72,18 @@ export const useAuth = () => {
         cardId: findUser.cardId,
         role: findUser.role,
         email: findUser.email,
+        id: findUser.id,
       };
     },
     onSuccess: async (data) => {
       setUser(data);
       logInfo(data.email, LogActionInfo.Login);
       showNotification('Zalogowano pomyślnie!', 'success');
-      await navigate({ to: '/' });
+      if (data.role === AuthRole.USER) {
+        await navigate({ to: '/user/my_stats' });
+      } else {
+        await navigate({ to: '/books', search: { page: 1, size: 5 } });
+      }
     },
     onError: (error: Error, data) => {
       logError(data.email, LogActionError.Login, error.message);

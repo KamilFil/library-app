@@ -1,20 +1,25 @@
 import LoginIcon from '@mui/icons-material/Login';
-import { StyledLoginBox } from './LoginBox.styled';
-import { useAuthStore } from '../../../../store/useAuthStore';
-import { useAuth } from '../../../../hooks/useAuth';
+import { StyledLoginBox, StyledLoginButton } from './LoginBox.styled';
+import { useNavigate } from '@tanstack/react-router';
 
 export const LoginBox = () => {
-  const { logout } = useAuth();
-  const { isAuthenticated } = useAuthStore();
+  const navigate = useNavigate();
+
+  const loginHandler = () => {
+    navigate({ to: '/sign-in' });
+  };
 
   return (
     <>
-      {isAuthenticated ? (
-        <StyledLoginBox onClick={logout}>
-          <LoginIcon />
+      <StyledLoginBox>
+        <StyledLoginButton
+          variant="outlined"
+          startIcon={<LoginIcon />}
+          onClick={loginHandler}
+        >
           Log In
-        </StyledLoginBox>
-      ) : null}
+        </StyledLoginButton>
+      </StyledLoginBox>
     </>
   );
 };

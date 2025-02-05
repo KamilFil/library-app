@@ -7,15 +7,29 @@ import {
 } from '@mui/material';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import StarIcon from '@mui/icons-material/Star';
-import HistoryIcon from '@mui/icons-material/History';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import { useNavigate } from '@tanstack/react-router';
 
 export const UserMenu = () => {
+  const navigate = useNavigate();
+
+  const handlerAllBooks = () => {
+    navigate({ to: '/books', search: { page: 1, size: 5 } });
+  };
+
+  const handlerMyBooks = () => {
+    navigate({ to: '/user/my_books', search: { page: 1, size: 5 } });
+  };
+
+  const handlerMyStats = () => {
+    navigate({ to: '/user/my_stats' });
+  };
+
   return (
     <>
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={handlerAllBooks}>
             <ListItemIcon>
               <LibraryBooksIcon />
             </ListItemIcon>
@@ -24,7 +38,7 @@ export const UserMenu = () => {
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={handlerMyBooks}>
             <ListItemIcon>
               <StarIcon />
             </ListItemIcon>
@@ -33,16 +47,7 @@ export const UserMenu = () => {
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <HistoryIcon />
-            </ListItemIcon>
-            <ListItemText primary={'My history'} />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={handlerMyStats}>
             <ListItemIcon>
               <QueryStatsIcon />
             </ListItemIcon>
