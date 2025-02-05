@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react';
-import { UserNoPassword } from '../../types/user';
 import { mockUser } from '../../types/context';
 import { UserRoleContext } from '../../context/UserRoleContext';
+import { UserNoPassword } from '../../types/user/user';
 
 export const UserRoleProvider: React.FC<{ children: ReactNode }> = ({
   children,

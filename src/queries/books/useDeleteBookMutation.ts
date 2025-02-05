@@ -13,7 +13,7 @@ export const useDeleteBookMutation = () => {
   const { logInfo, logError } = useLogger();
 
   const { mutate, isPending } = useMutation({
-    mutationKey: ['books', 'update'],
+    mutationKey: ['books', 'deleted'],
     mutationFn: async (bookId: string) => {
       return apiDelete<BookEntity>(`books/${bookId}`);
     },
