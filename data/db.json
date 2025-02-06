@@ -119,6 +119,36 @@
       "cardId": "e3vgu8",
       "role": "user",
       "isDeleted": false
+    },
+    {
+      "id": "b109",
+      "email": "user.e2e@example.com",
+      "password": "user12",
+      "lastName": "user12",
+      "firstName": "user12",
+      "cardId": "9v552xp",
+      "role": "user",
+      "isDeleted": false
+    },
+    {
+      "id": "a049",
+      "email": "user380298955723@example.com",
+      "password": "user12",
+      "lastName": "user12",
+      "firstName": "super12",
+      "cardId": "88ynz",
+      "role": "user",
+      "isDeleted": false
+    },
+    {
+      "id": "7c3d",
+      "email": "user75127996@example.com",
+      "password": "user12",
+      "lastName": "user12",
+      "firstName": "super12",
+      "cardId": "vrjwug",
+      "role": "user",
+      "isDeleted": false
     }
   ],
   "books": [
@@ -134,7 +164,7 @@
       "id": "23d3",
       "title": "Mrówka Z i Skarb Lasu",
       "author": "Rafał Orzeł",
-      "quantity": 1,
+      "quantity": 0,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -2233,6 +2263,786 @@
       "type": "info",
       "typeAction": "Wylogowanie",
       "actionDate": "2025-02-05T18:15:35.844Z"
+    },
+    {
+      "id": "47f2",
+      "email": "user@example.com",
+      "type": "error",
+      "typeAction": "Nieudana rejestracja",
+      "message": "User already exists",
+      "actionDate": "2025-02-06T15:34:50.024Z"
+    },
+    {
+      "id": "f28b",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Rejestracja",
+      "actionDate": "2025-02-06T15:35:49.894Z"
+    },
+    {
+      "id": "6ade",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T15:39:15.037Z"
+    },
+    {
+      "id": "4a2b",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T15:40:19.960Z"
+    },
+    {
+      "id": "c1b9",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T15:45:41.164Z"
+    },
+    {
+      "id": "444f",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T15:46:24.646Z"
+    },
+    {
+      "id": "e8f7",
+      "email": "asasasas",
+      "type": "error",
+      "typeAction": "Nieudane logowanie",
+      "message": "User not found",
+      "actionDate": "2025-02-06T15:47:27.398Z"
+    },
+    {
+      "id": "9d60",
+      "email": "user@example.com",
+      "type": "error",
+      "typeAction": "Nieudana rejestracja",
+      "message": "User already exists",
+      "actionDate": "2025-02-06T15:47:27.568Z"
+    },
+    {
+      "id": "210f",
+      "email": "user380298955723@example.com",
+      "type": "info",
+      "typeAction": "Rejestracja",
+      "actionDate": "2025-02-06T15:53:43.231Z"
+    },
+    {
+      "id": "7607",
+      "email": "user75127996@example.com",
+      "type": "info",
+      "typeAction": "Rejestracja",
+      "actionDate": "2025-02-06T15:54:11.680Z"
+    },
+    {
+      "id": "b95f",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T15:54:28.292Z"
+    },
+    {
+      "id": "a33f",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T15:56:09.354Z"
+    },
+    {
+      "id": "2129",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T15:58:12.183Z"
+    },
+    {
+      "id": "d1f7",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T15:58:15.334Z"
+    },
+    {
+      "id": "0a7d",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T15:58:16.089Z"
+    },
+    {
+      "id": "49ca",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:02:02.375Z"
+    },
+    {
+      "id": "8cdd",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:02:09.992Z"
+    },
+    {
+      "id": "8068",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:02:18.657Z"
+    },
+    {
+      "id": "2be1",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:02:41.990Z"
+    },
+    {
+      "id": "35f7",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:03:29.187Z"
+    },
+    {
+      "id": "28d5",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:03:29.205Z"
+    },
+    {
+      "id": "00c6",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T16:05:38.733Z"
+    },
+    {
+      "id": "77d6",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:05:53.337Z"
+    },
+    {
+      "id": "fba0",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:05:53.366Z"
+    },
+    {
+      "id": "5fe0",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:05:53.385Z"
+    },
+    {
+      "id": "3ee0",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-06T16:06:42.994Z"
+    },
+    {
+      "id": "f1b6",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-06T16:06:46.610Z"
+    },
+    {
+      "id": "2ed9",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-06T16:06:50.229Z"
+    },
+    {
+      "id": "2360",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:07:00.964Z"
+    },
+    {
+      "id": "b536",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:07:00.985Z"
+    },
+    {
+      "id": "75a7",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:07:01.051Z"
+    },
+    {
+      "id": "6988",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T16:07:01.602Z"
+    },
+    {
+      "id": "01fd",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:11:20.520Z"
+    },
+    {
+      "id": "0d92",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:11:36.757Z"
+    },
+    {
+      "id": "fd52",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:11:36.759Z"
+    },
+    {
+      "id": "8436",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:11:36.799Z"
+    },
+    {
+      "id": "3bb4",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:11:36.846Z"
+    },
+    {
+      "id": "48c3",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-06T16:12:42.511Z"
+    },
+    {
+      "id": "a121",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:13:50.471Z"
+    },
+    {
+      "id": "a358",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-06T16:15:45.248Z"
+    },
+    {
+      "id": "3cf2",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:16:29.693Z"
+    },
+    {
+      "id": "adcc",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:16:29.744Z"
+    },
+    {
+      "id": "90ba",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:16:30.067Z"
+    },
+    {
+      "id": "24c1",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:16:30.413Z"
+    },
+    {
+      "id": "6c09",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:16:30.414Z"
+    },
+    {
+      "id": "7f2a",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:16:30.413Z"
+    },
+    {
+      "id": "479b",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-06T16:16:30.535Z"
+    },
+    {
+      "id": "a4eb",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T16:16:30.868Z"
+    },
+    {
+      "id": "2f63",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:16:31.108Z"
+    },
+    {
+      "id": "daaf",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:17:16.250Z"
+    },
+    {
+      "id": "59db",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:17:16.286Z"
+    },
+    {
+      "id": "e807",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:17:16.316Z"
+    },
+    {
+      "id": "d817",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:17:16.377Z"
+    },
+    {
+      "id": "0d76",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:17:16.419Z"
+    },
+    {
+      "id": "c9a6",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-06T16:17:16.502Z"
+    },
+    {
+      "id": "47a7",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-06T16:17:16.695Z"
+    },
+    {
+      "id": "e473",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:20:50.170Z"
+    },
+    {
+      "id": "42ca",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:20:50.204Z"
+    },
+    {
+      "id": "48f7",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-06T16:20:50.276Z"
+    },
+    {
+      "id": "48d1",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:20:50.593Z"
+    },
+    {
+      "id": "ebe7",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:20:51.024Z"
+    },
+    {
+      "id": "6b30",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:20:51.024Z"
+    },
+    {
+      "id": "1888",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:20:51.039Z"
+    },
+    {
+      "id": "49b4",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:20:51.078Z"
+    },
+    {
+      "id": "5db6",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T16:20:51.488Z"
+    },
+    {
+      "id": "d1ec",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-06T16:23:18.150Z"
+    },
+    {
+      "id": "28d4",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:23:29.808Z"
+    },
+    {
+      "id": "b335",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:23:29.815Z"
+    },
+    {
+      "id": "4f8c",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:23:29.833Z"
+    },
+    {
+      "id": "143f",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:23:29.848Z"
+    },
+    {
+      "id": "ff24",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:23:29.852Z"
+    },
+    {
+      "id": "f5ae",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:23:29.851Z"
+    },
+    {
+      "id": "7b19",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-06T16:23:29.990Z"
+    },
+    {
+      "id": "d5a5",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T16:23:30.264Z"
+    },
+    {
+      "id": "9f6c",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:23:31.166Z"
+    },
+    {
+      "id": "62f8",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:23:31.425Z"
+    },
+    {
+      "id": "2191",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:24:21.520Z"
+    },
+    {
+      "id": "7884",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-06T16:24:32.274Z"
+    },
+    {
+      "id": "c0ca",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:24:42.737Z"
+    },
+    {
+      "id": "26e7",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:26:34.670Z"
+    },
+    {
+      "id": "6766",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:26:34.704Z"
+    },
+    {
+      "id": "6911",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:26:34.704Z"
+    },
+    {
+      "id": "9836",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-06T16:26:34.810Z"
+    },
+    {
+      "id": "312f",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:26:35.371Z"
+    },
+    {
+      "id": "7981",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:26:35.371Z"
+    },
+    {
+      "id": "c040",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:26:35.982Z"
+    },
+    {
+      "id": "0089",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:26:36.221Z"
+    },
+    {
+      "id": "acbe",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:26:36.221Z"
+    },
+    {
+      "id": "8255",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T16:26:36.654Z"
+    },
+    {
+      "id": "cb43",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-06T16:27:19.634Z"
+    },
+    {
+      "id": "4062",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T16:28:53.620Z"
+    },
+    {
+      "id": "73bc",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:03.607Z"
+    },
+    {
+      "id": "df30",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:04.724Z"
+    },
+    {
+      "id": "165d",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:05.724Z"
+    },
+    {
+      "id": "4c00",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Zwrócenie książki",
+      "actionDate": "2025-02-06T16:30:23.609Z"
+    },
+    {
+      "id": "59eb",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:33.090Z"
+    },
+    {
+      "id": "c443",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:34.272Z"
+    },
+    {
+      "id": "44d0",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:35.272Z"
+    },
+    {
+      "id": "3e68",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:36.323Z"
+    },
+    {
+      "id": "f637",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wypożyczenie książki",
+      "actionDate": "2025-02-06T16:30:36.776Z"
+    },
+    {
+      "id": "8193",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:37.405Z"
+    },
+    {
+      "id": "398a",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:41.606Z"
+    },
+    {
+      "id": "7fa6",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Wylogowanie",
+      "actionDate": "2025-02-06T16:30:41.682Z"
+    },
+    {
+      "id": "9a59",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:30:42.289Z"
+    },
+    {
+      "id": "fe2d",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:48:24.436Z"
+    },
+    {
+      "id": "e939",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:50:07.660Z"
+    },
+    {
+      "id": "9334",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:50:35.243Z"
+    },
+    {
+      "id": "2e59",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:51:50.490Z"
+    },
+    {
+      "id": "b75e",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T16:57:19.726Z"
+    },
+    {
+      "id": "dafb",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T17:23:51.897Z"
+    },
+    {
+      "id": "09a3",
+      "email": "user.e2e@example.com",
+      "type": "info",
+      "typeAction": "Logowanie",
+      "actionDate": "2025-02-06T17:23:53.112Z"
     }
   ]
 }
