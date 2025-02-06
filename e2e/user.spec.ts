@@ -118,7 +118,7 @@ test.describe.serial('User E2E', () => {
     ).toBeVisible();
   });
 
-  test('User should be able to cance deletion of if no books rented', async ({
+  test('User should be able to cancel deletion of if no books rented', async ({
     page,
   }) => {
     await page.getByRole('button', { name: 'Delete' }).click();
