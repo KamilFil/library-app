@@ -12,8 +12,8 @@
     "prepare": "husky",
     "typecheck": "tsc --build --verbose --noEmit --pretty",
     "db": "json-server data/db.json --port 3307",
-    "test": "vitest",
-    "test-e2e": "playwright test --ui"
+    "test:unit": "vitest --watch=false",
+    "test:e2e": "playwright test --ui"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
