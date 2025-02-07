@@ -35,8 +35,8 @@ export const ReturnBookComponent = ({ record }: RecordBookComponentProps) => {
     if (isRentalPending) return <p>Loading...</p>;
 
     bookMutate({
-      ...record.book,
-      quantity: record.book.quantity + 1,
+      ...record.book!,
+      quantity: record.book!.quantity + 1,
     });
 
     if (isBookPending) return <p>Loading...</p>;

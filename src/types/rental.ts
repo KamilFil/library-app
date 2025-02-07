@@ -2,7 +2,7 @@ import { BookEntity } from './book';
 import { User } from './user/user.ts';
 
 export interface RentalEntity {
-  id: string;
+  id?: string;
   userId: string;
   bookId: string;
   rentedAt: string;
@@ -11,10 +11,17 @@ export interface RentalEntity {
   book?: BookEntity;
 }
 
-export type RentalDto = Omit<RentalEntity, 'id'>;
+export type RentalDto = {
+  id?: string;
+  userId?: string;
+  bookId?: string;
+  rentedAt?: string;
+  returnedAt?: string | null;
+};
 
 export interface RentalWithBookEntity extends RentalEntity {
-  book: BookEntity;
+  book?: BookEntity;
+  user?: User;
 }
 
 export interface PaginatedRentalsEntity {

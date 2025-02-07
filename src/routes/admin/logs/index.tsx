@@ -13,6 +13,5 @@ export const Route = createFileRoute('/admin/logs/')({
     page: Number(search?.page ?? 1),
     size: Number(search?.size ?? 5),
   }),
-  loaderDeps: ({ search }) => ({ page: search.page, size: search.size }),
   beforeLoad: async () => authGuard('admin'),
 });

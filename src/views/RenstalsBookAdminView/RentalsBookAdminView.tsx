@@ -1,4 +1,5 @@
 import {
+  Box,
   Table,
   TableBody,
   TableContainer,
@@ -14,6 +15,7 @@ import { StyledTableCell, StyledTableRow } from '../Logs/Logs.styled.tsx';
 import { isOverdueRental } from '../../utils/isOverdueRental.ts';
 import FmdBadIcon from '@mui/icons-material/FmdBad';
 import GppGoodIcon from '@mui/icons-material/GppGood';
+import { ReturnBookComponent } from '../../components/User/UserBookTable/ReturnBookComponent.tsx';
 
 export const RentalsBookAdminView = () => {
   const search = useSearch({ from: '/admin/rentals/' });
@@ -23,6 +25,8 @@ export const RentalsBookAdminView = () => {
 
   if (isFetching) return <p>Loading...</p>;
   if (!data) return <p>No logs.</p>;
+
+  const { data: rentBook } = data;
 
   return (
     <>
@@ -39,18 +43,18 @@ export const RentalsBookAdminView = () => {
               <StyledTableCell align="left">ID</StyledTableCell>
               <StyledTableCell align="left">Book title</StyledTableCell>
               <StyledTableCell align="left">Rented at</StyledTableCell>
+              <StyledTableCell align="left">Returned at</StyledTableCell>
               <StyledTableCell align="left">Username</StyledTableCell>
+              <StyledTableCell align="left">CardID</StyledTableCell>
               <StyledTableCell align="left">Status</StyledTableCell>
+              <StyledTableCell align="center">Action</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((rentals) => (
+            {rentBook.map((rentals) => (
               <StyledTableRow
                 key={rentals.id}
                 sx={{
-                  backgroundColor: isOverdueRental(rentals).isOverdue
-                    ? '#fb8989'
-                    : '',
                   '&:last-child td, &:last-child th': { border: 0 },
                 }}
               >
@@ -62,27 +66,45 @@ export const RentalsBookAdminView = () => {
                   {rentals.rentedAt}
                 </StyledTableCell>
                 <StyledTableCell align="left">
+                  {rentals.returnedAt ?? 'Rented'}
+                </StyledTableCell>
+                <StyledTableCell align="left">
                   {rentals?.user
                     ? `${rentals.user.firstName} ${rentals.user.lastName}`
                     : 'Użytkownik usunięty'}{' '}
                 </StyledTableCell>
-                <StyledTableCell align="left">
+                <StyledTableCell>
+                  {rentals?.user ? rentals.user.cardId : 'Brak karty'}
+                </StyledTableCell>
+                <StyledTableCell align="center">
                   {isOverdueRental(rentals).daysDifference ? (
                     <Tooltip
                       title={`Opóźnione o ${isOverdueRental(rentals).daysDifference} dni`}
                     >
                       <span>
-                        <FmdBadIcon color="error" />
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                          <FmdBadIcon color="error" />
+                          {rentals.returnedAt !== null ? 'Returned' : 'Rented'}
+                        </Box>
                       </span>
                     </Tooltip>
                   ) : (
                     <Tooltip title={`Brak opóźnienia`}>
                       <span>
-                        <GppGoodIcon color="success" />
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                          <GppGoodIcon color="success" />
+                          {rentals.returnedAt !== null ? 'Returned' : 'Rented'}
+                        </Box>
                       </span>
                     </Tooltip>
                   )}
                 </StyledTableCell>
+                {rentals.returnedAt === null &&
+                isOverdueRental(rentals).isOverdue ? (
+                  <StyledTableCell align={'center'}>
+                    <ReturnBookComponent record={rentals} />
+                  </StyledTableCell>
+                ) : null}
               </StyledTableRow>
             ))}
           </TableBody>
@@ -90,7 +112,7 @@ export const RentalsBookAdminView = () => {
       </TableContainer>
       <Pagination
         prev={page > 1 ? page - 1 : null}
-        next={data.length === size ? page + 1 : null}
+        next={data.items > size * page ? page + 1 : null}
       />
     </>
   );

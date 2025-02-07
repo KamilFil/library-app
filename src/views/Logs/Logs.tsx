@@ -14,9 +14,10 @@ export const Logs = () => {
   const search = useSearch({ from: '/admin/logs/' });
   const page = Number(search.page ?? 1);
   const size = Number(search.size ?? 5);
-  const { data } = useGetLogsQuery(page, size);
+  const { data, isFetching } = useGetLogsQuery(page, size);
 
-  if (!data) return <p>No logs.</p>;
+  if (!data) return <p>No logs found.</p>;
+  if (isFetching) return <p>Loading logs...</p>;
 
   return (
     <>
@@ -38,7 +39,7 @@ export const Logs = () => {
             </StyledTableRow>
           </TableHead>
           <TableBody>
-            {data.map((log) => (
+            {data.data.map((log) => (
               <StyledTableRow
                 key={log.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -59,7 +60,7 @@ export const Logs = () => {
       </TableContainer>
       <Pagination
         prev={page > 1 ? page - 1 : null}
-        next={data.length === size ? page + 1 : null}
+        next={data.items > size * page ? page + 1 : null}
       />
     </>
   );

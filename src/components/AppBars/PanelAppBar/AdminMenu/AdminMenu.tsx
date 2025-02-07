@@ -29,7 +29,11 @@ export const AdminMenu = () => {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton
+            onClick={() =>
+              navigate({ to: '/admin/rentals', search: { page: 1, size: 5 } })
+            }
+          >
             <ListItemIcon>
               <AutoStoriesIcon />
             </ListItemIcon>
