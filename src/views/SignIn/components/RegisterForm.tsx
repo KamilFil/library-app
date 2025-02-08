@@ -28,16 +28,21 @@ export const RegisterForm = ({ handleSwitchForm }: Props) => {
 
   return (
     <StyledBox component="form" onSubmit={handleSubmit(handleRegister)}>
-      <Typography variant="h3" sx={{ color: 'black' }}>
-        Załóż konto
+      <Typography
+        variant="h4"
+        sx={{ color: 'black', marginBottom: '20px', fontWeight: 'bold' }}
+      >
+        Sign Up
       </Typography>
       <StyledTextField
         placeholder="Email"
+        type="email"
         {...register('email', { required: true })}
         error={!!errors.email}
         helperText={errors.email ? 'Email is required' : ''}
       />
       <StyledTextField
+        type="password"
         placeholder="Password"
         {...register('password', { required: true, minLength: 6 })}
         error={!!errors.password}
@@ -55,11 +60,16 @@ export const RegisterForm = ({ handleSwitchForm }: Props) => {
         error={!!errors.firstName}
         helperText={errors.lastName ? 'Firstname is required' : ''}
       />
-      <Button type="submit" variant="contained" color="primary">
-        Rejestracja
+      <Button
+        sx={{ marginBottom: 1 }}
+        type="submit"
+        variant="contained"
+        color="primary"
+      >
+        Sign Up
       </Button>
       <Button variant="outlined" color="primary" onClick={handleSwitchForm}>
-        Mam już konto
+        Log In
       </Button>
     </StyledBox>
   );

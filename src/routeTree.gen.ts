@@ -14,11 +14,13 @@ import { Route as rootRoute } from './routes/__root';
 import { Route as IndexImport } from './routes/index';
 import { Route as UserIndexImport } from './routes/user/index';
 import { Route as SignInIndexImport } from './routes/sign-in/index';
-import { Route as LogsIndexImport } from './routes/logs/index';
 import { Route as BooksIndexImport } from './routes/books/index';
+import { Route as AdminIndexImport } from './routes/admin/index';
 import { Route as BooksBookIdImport } from './routes/books/$bookId';
 import { Route as UserMystatsIndexImport } from './routes/user/my_stats/index';
 import { Route as UserMybooksIndexImport } from './routes/user/my_books/index';
+import { Route as AdminRentalsIndexImport } from './routes/admin/rentals/index';
+import { Route as AdminLogsIndexImport } from './routes/admin/logs/index';
 
 // Create/Update Routes
 
@@ -40,15 +42,15 @@ const SignInIndexRoute = SignInIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any);
 
-const LogsIndexRoute = LogsIndexImport.update({
-  id: '/logs/',
-  path: '/logs/',
-  getParentRoute: () => rootRoute,
-} as any);
-
 const BooksIndexRoute = BooksIndexImport.update({
   id: '/books/',
   path: '/books/',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const AdminIndexRoute = AdminIndexImport.update({
+  id: '/admin/',
+  path: '/admin/',
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -70,6 +72,18 @@ const UserMybooksIndexRoute = UserMybooksIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any);
 
+const AdminRentalsIndexRoute = AdminRentalsIndexImport.update({
+  id: '/admin/rentals/',
+  path: '/admin/rentals/',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const AdminLogsIndexRoute = AdminLogsIndexImport.update({
+  id: '/admin/logs/',
+  path: '/admin/logs/',
+  getParentRoute: () => rootRoute,
+} as any);
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -88,18 +102,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BooksBookIdImport;
       parentRoute: typeof rootRoute;
     };
+    '/admin/': {
+      id: '/admin/';
+      path: '/admin';
+      fullPath: '/admin';
+      preLoaderRoute: typeof AdminIndexImport;
+      parentRoute: typeof rootRoute;
+    };
     '/books/': {
       id: '/books/';
       path: '/books';
       fullPath: '/books';
       preLoaderRoute: typeof BooksIndexImport;
-      parentRoute: typeof rootRoute;
-    };
-    '/logs/': {
-      id: '/logs/';
-      path: '/logs';
-      fullPath: '/logs';
-      preLoaderRoute: typeof LogsIndexImport;
       parentRoute: typeof rootRoute;
     };
     '/sign-in/': {
@@ -114,6 +128,20 @@ declare module '@tanstack/react-router' {
       path: '/user';
       fullPath: '/user';
       preLoaderRoute: typeof UserIndexImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/admin/logs/': {
+      id: '/admin/logs/';
+      path: '/admin/logs';
+      fullPath: '/admin/logs';
+      preLoaderRoute: typeof AdminLogsIndexImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/admin/rentals/': {
+      id: '/admin/rentals/';
+      path: '/admin/rentals';
+      fullPath: '/admin/rentals';
+      preLoaderRoute: typeof AdminRentalsIndexImport;
       parentRoute: typeof rootRoute;
     };
     '/user/my_books/': {
@@ -138,10 +166,12 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute;
   '/books/$bookId': typeof BooksBookIdRoute;
+  '/admin': typeof AdminIndexRoute;
   '/books': typeof BooksIndexRoute;
-  '/logs': typeof LogsIndexRoute;
   '/sign-in': typeof SignInIndexRoute;
   '/user': typeof UserIndexRoute;
+  '/admin/logs': typeof AdminLogsIndexRoute;
+  '/admin/rentals': typeof AdminRentalsIndexRoute;
   '/user/my_books': typeof UserMybooksIndexRoute;
   '/user/my_stats': typeof UserMystatsIndexRoute;
 }
@@ -149,10 +179,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute;
   '/books/$bookId': typeof BooksBookIdRoute;
+  '/admin': typeof AdminIndexRoute;
   '/books': typeof BooksIndexRoute;
-  '/logs': typeof LogsIndexRoute;
   '/sign-in': typeof SignInIndexRoute;
   '/user': typeof UserIndexRoute;
+  '/admin/logs': typeof AdminLogsIndexRoute;
+  '/admin/rentals': typeof AdminRentalsIndexRoute;
   '/user/my_books': typeof UserMybooksIndexRoute;
   '/user/my_stats': typeof UserMystatsIndexRoute;
 }
@@ -161,10 +193,12 @@ export interface FileRoutesById {
   __root__: typeof rootRoute;
   '/': typeof IndexRoute;
   '/books/$bookId': typeof BooksBookIdRoute;
+  '/admin/': typeof AdminIndexRoute;
   '/books/': typeof BooksIndexRoute;
-  '/logs/': typeof LogsIndexRoute;
   '/sign-in/': typeof SignInIndexRoute;
   '/user/': typeof UserIndexRoute;
+  '/admin/logs/': typeof AdminLogsIndexRoute;
+  '/admin/rentals/': typeof AdminRentalsIndexRoute;
   '/user/my_books/': typeof UserMybooksIndexRoute;
   '/user/my_stats/': typeof UserMystatsIndexRoute;
 }
@@ -174,30 +208,36 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/books/$bookId'
+    | '/admin'
     | '/books'
-    | '/logs'
     | '/sign-in'
     | '/user'
+    | '/admin/logs'
+    | '/admin/rentals'
     | '/user/my_books'
     | '/user/my_stats';
   fileRoutesByTo: FileRoutesByTo;
   to:
     | '/'
     | '/books/$bookId'
+    | '/admin'
     | '/books'
-    | '/logs'
     | '/sign-in'
     | '/user'
+    | '/admin/logs'
+    | '/admin/rentals'
     | '/user/my_books'
     | '/user/my_stats';
   id:
     | '__root__'
     | '/'
     | '/books/$bookId'
+    | '/admin/'
     | '/books/'
-    | '/logs/'
     | '/sign-in/'
     | '/user/'
+    | '/admin/logs/'
+    | '/admin/rentals/'
     | '/user/my_books/'
     | '/user/my_stats/';
   fileRoutesById: FileRoutesById;
@@ -206,10 +246,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   BooksBookIdRoute: typeof BooksBookIdRoute;
+  AdminIndexRoute: typeof AdminIndexRoute;
   BooksIndexRoute: typeof BooksIndexRoute;
-  LogsIndexRoute: typeof LogsIndexRoute;
   SignInIndexRoute: typeof SignInIndexRoute;
   UserIndexRoute: typeof UserIndexRoute;
+  AdminLogsIndexRoute: typeof AdminLogsIndexRoute;
+  AdminRentalsIndexRoute: typeof AdminRentalsIndexRoute;
   UserMybooksIndexRoute: typeof UserMybooksIndexRoute;
   UserMystatsIndexRoute: typeof UserMystatsIndexRoute;
 }
@@ -217,10 +259,12 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BooksBookIdRoute: BooksBookIdRoute,
+  AdminIndexRoute: AdminIndexRoute,
   BooksIndexRoute: BooksIndexRoute,
-  LogsIndexRoute: LogsIndexRoute,
   SignInIndexRoute: SignInIndexRoute,
   UserIndexRoute: UserIndexRoute,
+  AdminLogsIndexRoute: AdminLogsIndexRoute,
+  AdminRentalsIndexRoute: AdminRentalsIndexRoute,
   UserMybooksIndexRoute: UserMybooksIndexRoute,
   UserMystatsIndexRoute: UserMystatsIndexRoute,
 };
@@ -237,10 +281,12 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/books/$bookId",
+        "/admin/",
         "/books/",
-        "/logs/",
         "/sign-in/",
         "/user/",
+        "/admin/logs/",
+        "/admin/rentals/",
         "/user/my_books/",
         "/user/my_stats/"
       ]
@@ -251,17 +297,23 @@ export const routeTree = rootRoute
     "/books/$bookId": {
       "filePath": "books/$bookId.tsx"
     },
+    "/admin/": {
+      "filePath": "admin/index.tsx"
+    },
     "/books/": {
       "filePath": "books/index.tsx"
-    },
-    "/logs/": {
-      "filePath": "logs/index.tsx"
     },
     "/sign-in/": {
       "filePath": "sign-in/index.tsx"
     },
     "/user/": {
       "filePath": "user/index.tsx"
+    },
+    "/admin/logs/": {
+      "filePath": "admin/logs/index.tsx"
+    },
+    "/admin/rentals/": {
+      "filePath": "admin/rentals/index.tsx"
     },
     "/user/my_books/": {
       "filePath": "user/my_books/index.tsx"

@@ -6,8 +6,8 @@ import { useAuthStore } from '../../store/useAuthStore.ts';
 import { useLogger } from '../../hooks/useLogger.ts';
 import { LogActionError, LogActionInfo } from '../../types/log.ts';
 
-export const useReturnRentalMutation = (rentalId: string) => {
-  const { apiPut } = useApi();
+export const useReturnRentalMutation = (rentalId?: string) => {
+  const { apiPatch } = useApi();
   const { showNotification } = useNotificationStore();
   const { user } = useAuthStore();
   const { logInfo, logError } = useLogger();
@@ -17,7 +17,10 @@ export const useReturnRentalMutation = (rentalId: string) => {
   const { mutate, isPending } = useMutation({
     mutationKey: ['rentals', 'update', rentalId],
     mutationFn: async (payload: RentalDto) => {
-      return apiPut<RentalEntity, RentalDto>(`rentals/${rentalId}`, payload);
+      return apiPatch<RentalEntity, RentalDto>(
+        `rentals/${rentalId ? rentalId : payload.id}`,
+        payload,
+      );
     },
     onSuccess: () => {
       showNotification('Zwrócono książkę!', 'success');
