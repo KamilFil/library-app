@@ -8,12 +8,12 @@ export interface BookEntity {
 }
 
 export type BookDto = {
-  id: string;
-  title: string;
-  author: string;
-  quantity: number;
-  description: string;
-  year: number;
+  id?: string;
+  title?: string;
+  author?: string;
+  quantity?: number;
+  description?: string;
+  year?: number;
 };
 
 export interface PaginatedBooksEntity {

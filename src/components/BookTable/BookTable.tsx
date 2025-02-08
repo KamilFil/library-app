@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Table,
   TableBody,
@@ -18,6 +19,8 @@ import { InfoDialog } from '../InfoDialog/InfoDialog.tsx';
 import { DialogType } from '../../types/dialog.ts';
 import { useState } from 'react';
 import { useDeleteBookMutation } from '../../queries/books/useDeleteBookMutation.ts';
+import { AddBookForm } from '../../views/Books/AddBookForm.tsx';
+import { EditFormBook } from '../../views/Books/EditFormBook.tsx';
 
 interface BookTableProps {
   books: BookEntity[];
@@ -28,6 +31,7 @@ export const BookTable = ({ books }: BookTableProps) => {
   const { user } = useAuthStore();
   const [isOpenModal, setOpenModal] = useState(false);
   const { mutate } = useDeleteBookMutation();
+  const [bookState, setBookState] = useState<BookEntity | null>(null);
 
   const handleDisagree = () => {
     setOpenModal(false);
@@ -48,7 +52,18 @@ export const BookTable = ({ books }: BookTableProps) => {
 
   return (
     <>
-      <Typography variant="h4">List of books</Typography>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '100%',
+          paddingBottom: 2,
+        }}
+      >
+        <Typography variant="h4">List of books</Typography>
+        <AddBookForm />
+      </Box>
       <TableContainer>
         <Table sx={{ minWidth: 650 }} aria-label="books-table">
           <TableHead>
@@ -80,14 +95,20 @@ export const BookTable = ({ books }: BookTableProps) => {
                   )}
                   {user?.role === AuthRole.ADMIN ? (
                     <>
-                      <Button onClick={() => onDeleteHandler(book.id)}>
+                      <Button onClick={() => setBookState(book)}>
                         <EditIcon color="info" />
                       </Button>
+
                       <Button onClick={() => onDeleteHandler(book.id)}>
                         <DeleteForeverIcon color="error" />
                       </Button>
                     </>
                   ) : null}
+                  <EditFormBook
+                    book={bookState}
+                    isOpen={bookState?.id === book.id}
+                    handleClose={() => setBookState(null)}
+                  />
                   <InfoDialog
                     open={isOpenModal}
                     handleDisagree={handleDisagree}

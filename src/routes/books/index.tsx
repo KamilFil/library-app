@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { authGuard } from '../../auth/authGuard.ts';
 import { BooksView } from '../../views/Books/BooksView.tsx';
 
 export type BooksSearch = {
@@ -12,6 +11,5 @@ export const Route = createFileRoute('/books/')({
     page: Number(search?.page ?? 1),
     size: Number(search?.size ?? 5),
   }),
-  beforeLoad: () => authGuard(),
   component: BooksView,
 });
