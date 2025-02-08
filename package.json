@@ -12,6 +12,7 @@
     "prepare": "husky",
     "typecheck": "tsc --build --verbose --noEmit --pretty",
     "db-e2e-user": "json-server data/db-e2e-user.json --port 3307",
+    "db-e2e-admin": "json-server data/db-e2e-admin.json --port 3307",
     "db": "json-server data/db.json --port 3307",
     "test:unit": "vitest --watch=false",
     "test:e2e": "playwright test --ui"
