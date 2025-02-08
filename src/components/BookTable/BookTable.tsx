@@ -62,7 +62,7 @@ export const BookTable = ({ books }: BookTableProps) => {
         }}
       >
         <Typography variant="h4">List of books</Typography>
-        <AddBookForm />
+        {user?.role === AuthRole.ADMIN && <AddBookForm />}
       </Box>
       <TableContainer>
         <Table sx={{ minWidth: 650 }} aria-label="books-table">
