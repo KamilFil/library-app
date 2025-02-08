@@ -4,6 +4,8 @@ import { BookEntity } from '../../types/book.ts';
 import { useNotificationStore } from '../../store/useNotificationStore.ts';
 import { useLogger } from '../../hooks/useLogger.ts';
 import { useAuthStore } from '../../store/useAuthStore.ts';
+import { RentalEntity } from '../../types/rental.ts';
+import { LogActionError } from '../../types/log.ts';
 
 export const useDeleteBookMutation = () => {
   const { apiDelete } = useApi();
@@ -11,10 +13,22 @@ export const useDeleteBookMutation = () => {
   const { user } = useAuthStore();
   const { showNotification } = useNotificationStore();
   const { logInfo, logError } = useLogger();
+  const { apiGet } = useApi();
 
   const { mutate, isPending } = useMutation({
     mutationKey: ['books', 'deleted'],
     mutationFn: async (bookId: string) => {
+      const getRentedBooks = await apiGet<RentalEntity[]>(`rentals`);
+      const findRentalsBook = getRentedBooks.filter(
+        (rental) => rental.bookId === bookId,
+      );
+
+      if (findRentalsBook.length > 0) {
+        throw new Error(
+          'Nie można usunąć książki, ponieważ jest ona wypożyczona',
+        );
+      }
+
       return apiDelete<BookEntity>(`books/${bookId}`);
     },
     onSuccess: () => {
@@ -25,8 +39,11 @@ export const useDeleteBookMutation = () => {
       });
     },
     onError: (error: Error) => {
-      showNotification('Nie udało się usunąć książki', 'error');
-      logError(user!.email, 'Nie udało się usunąć książki', error.message);
+      showNotification(
+        error.message ?? 'Nie udało się usunać książki',
+        'error',
+      );
+      logError(user!.email, LogActionError.DeleteBook, error.message);
     },
   });
 

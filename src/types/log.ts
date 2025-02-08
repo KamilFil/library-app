@@ -36,5 +36,6 @@ export enum LogActionError {
   Login = 'Nieudane logowanie',
   RentBook = 'Nieudane wypożyczenie książki',
   ReturnBook = 'Nieudane zwrócenie książki',
+  DeleteBook = 'Usuwanie książki',
   UserDeletion = 'Nieudane usunięcie użytkownika',
 }
