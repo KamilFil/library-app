@@ -37,11 +37,15 @@ export const LoginForm = ({ handleSwitchForm }: Props) => {
         padding: '20px',
       }}
     >
-      <Typography variant="h2" sx={{ color: 'black' }}>
-        Zaloguj się
+      <Typography
+        variant="h4"
+        sx={{ color: 'black', marginBottom: '20px', fontWeight: 'bold' }}
+      >
+        Log in
       </Typography>
       <StyledTextField
         sx={{ color: 'black' }}
+        type="email"
         placeholder="Email"
         {...register('email', { required: true })}
         error={!!errors.email}
@@ -49,16 +53,22 @@ export const LoginForm = ({ handleSwitchForm }: Props) => {
       />
       <StyledTextField
         sx={{ color: 'black' }}
+        type="password"
         placeholder="Password"
         {...register('password', { required: true, minLength: 6 })}
         error={!!errors.password}
         helperText={errors.password ? 'Password is required' : ''}
       />
-      <Button type="submit" variant="contained" color="primary">
-        Logowanie
+      <Button
+        sx={{ marginBottom: 1 }}
+        type="submit"
+        variant="contained"
+        color="primary"
+      >
+        Login
       </Button>
       <Button variant="outlined" color="primary" onClick={handleSwitchForm}>
-        Utwórz konto
+        Create an account
       </Button>
     </Box>
   );

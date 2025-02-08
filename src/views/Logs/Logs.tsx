@@ -32,10 +32,10 @@ export const Logs = () => {
           <TableHead>
             <StyledTableRow>
               <StyledTableCell align="left">ID</StyledTableCell>
-              <StyledTableCell align="left">Data</StyledTableCell>
-              <StyledTableCell align="left">Typ</StyledTableCell>
-              <StyledTableCell align="left">Akcja</StyledTableCell>
-              <StyledTableCell align="left">Wiadomość</StyledTableCell>
+              <StyledTableCell align="left">Date</StyledTableCell>
+              <StyledTableCell align="left">Type</StyledTableCell>
+              <StyledTableCell align="left">Action Type</StyledTableCell>
+              <StyledTableCell align="left">Messages</StyledTableCell>
             </StyledTableRow>
           </TableHead>
           <TableBody>
