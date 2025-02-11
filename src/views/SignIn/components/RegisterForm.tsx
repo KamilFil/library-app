@@ -44,19 +44,19 @@ export const RegisterForm = ({ handleSwitchForm }: Props) => {
       <StyledTextField
         type="password"
         placeholder="Password"
-        {...register('password', { required: true, minLength: 6 })}
+        {...register('password', { required: true, minLength: 5 })}
         error={!!errors.password}
         helperText={errors.password ? 'Password is required' : ''}
       />
       <StyledTextField
         placeholder="Lastname"
-        {...register('lastName', { required: true, minLength: 6 })}
+        {...register('lastName', { required: true, minLength: 3 })}
         error={!!errors.lastName}
         helperText={errors.lastName ? 'Lastname is required' : ''}
       />
       <StyledTextField
         placeholder="Firstname"
-        {...register('firstName', { required: true, minLength: 6 })}
+        {...register('firstName', { required: true, minLength: 3 })}
         error={!!errors.firstName}
         helperText={errors.lastName ? 'Firstname is required' : ''}
       />
