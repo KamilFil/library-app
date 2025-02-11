@@ -3,9 +3,9 @@
     {
       "id": "9ea6",
       "email": "admin@admin.pl",
-      "password": "Piotr",
+      "password": "admin123",
       "lastName": "Filip",
-      "firstName": "admin123",
+      "firstName": "Piotr",
       "cardId": "22osk",
       "role": "admin",
       "isDeleted": false
@@ -13,9 +13,9 @@
     {
       "id": "54re",
       "email": "user@user.pl",
-      "password": "Janusz",
+      "password": "user123",
       "lastName": "Kowalski",
-      "firstName": "user123",
+      "firstName": "Janusz",
       "cardId": "22osk",
       "role": "user",
       "isDeleted": false
