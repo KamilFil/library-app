@@ -33,6 +33,7 @@ export const Logs = () => {
             <StyledTableRow>
               <StyledTableCell align="left">ID</StyledTableCell>
               <StyledTableCell align="left">Date</StyledTableCell>
+              <StyledTableCell align="left">Email</StyledTableCell>
               <StyledTableCell align="left">Type</StyledTableCell>
               <StyledTableCell align="left">Action Type</StyledTableCell>
               <StyledTableCell align="left">Messages</StyledTableCell>
@@ -48,6 +49,7 @@ export const Logs = () => {
                 <StyledTableCell align="left">
                   {new Date(log.actionDate).toLocaleString('pl-PL')}
                 </StyledTableCell>
+                <StyledTableCell align="left">{log.userEmail}</StyledTableCell>
                 <StyledTableCell align="left">{log.type}</StyledTableCell>
                 <StyledTableCell align="left">{log.typeAction}</StyledTableCell>
                 <StyledTableCell align="left">

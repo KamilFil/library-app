@@ -1,6 +1,5 @@
 import { Button } from '@mui/material';
 import { useState } from 'react';
-import { useNavigate } from '@tanstack/react-router';
 import { RentalWithBookEntity } from '../../../types/rental';
 import { useReturnRentalMutation } from '../../../queries/rentals/useReturnRentalMutation';
 import { usePutBookMutation } from '../../../queries/books/usePutBookMutation';
@@ -18,7 +17,6 @@ export const ReturnBookComponent = ({ record }: RecordBookComponentProps) => {
     record.bookId,
   );
   const [isOpenModal, setOpenModal] = useState(false);
-  const navigate = useNavigate();
 
   const handleDisagree = () => {
     setOpenModal(false);
@@ -42,8 +40,6 @@ export const ReturnBookComponent = ({ record }: RecordBookComponentProps) => {
     if (isRentalPending) return <p>Loading...</p>;
 
     setOpenModal(false);
-
-    navigate({ to: '..' });
   };
 
   return (

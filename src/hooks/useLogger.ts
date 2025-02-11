@@ -3,7 +3,7 @@ import { useApi } from '../api/useApi.ts';
 import { LogType } from '../types/log.ts';
 
 interface Log {
-  email: string;
+  userEmail: string;
   typeAction: string;
   type: string;
   actionDate: string;
@@ -23,7 +23,7 @@ export const useLogger = () => {
 
   const logInfo = async (email: string, typeAction: string) => {
     addLogMutation.mutate({
-      email,
+      userEmail: email,
       type: LogType.Info,
       typeAction: typeAction,
       actionDate: new Date().toISOString(),
@@ -37,7 +37,7 @@ export const useLogger = () => {
     message?: string,
   ) => {
     addLogMutation.mutate({
-      email,
+      userEmail: email,
       type: LogType.Error,
       typeAction,
       message,

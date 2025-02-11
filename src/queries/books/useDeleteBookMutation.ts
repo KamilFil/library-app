@@ -22,8 +22,11 @@ export const useDeleteBookMutation = () => {
       const findRentalsBook = getRentedBooks.filter(
         (rental) => rental.bookId === bookId,
       );
+      const isRentBook = findRentalsBook.filter(
+        (rental) => rental.returnedAt === null,
+      );
 
-      if (findRentalsBook.length > 0) {
+      if (isRentBook.length > 0) {
         throw new Error(
           'Nie można usunąć książki, ponieważ jest ona wypożyczona',
         );

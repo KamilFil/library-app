@@ -4,12 +4,14 @@ import { BookDto, BookEntity } from '../../types/book.ts';
 import { useNotificationStore } from '../../store/useNotificationStore.ts';
 import { useLogger } from '../../hooks/useLogger.ts';
 import { LogActionError, LogActionInfo } from '../../types/log.ts';
+import { useAuthStore } from '../../store/useAuthStore.ts';
 
 export const usePutBookMutation = (bookId?: string) => {
   const { apiPatch } = useApi();
   const queryClient = useQueryClient();
   const { showNotification } = useNotificationStore();
   const { logInfo, logError } = useLogger();
+  const { user } = useAuthStore();
 
   const { mutate, isPending } = useMutation({
     mutationKey: ['books', 'update', bookId],
@@ -25,7 +27,7 @@ export const usePutBookMutation = (bookId?: string) => {
     },
     onSuccess: async () => {
       showNotification('Zaktualizowano książkę!', 'success');
-      await logInfo(LogActionInfo.EditBook, 'Book updated');
+      await logInfo(user!.email, LogActionInfo.EditBook);
       await queryClient.invalidateQueries({
         queryKey: ['books'],
       });
