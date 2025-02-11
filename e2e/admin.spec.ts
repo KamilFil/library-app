@@ -73,6 +73,29 @@ test.describe.serial('Admin E2E', () => {
     await expect(page.getByRole('cell', { name: 'Test' }).nth(1)).toBeVisible();
   });
 
+  test('Check returned book user for admin', async ({ page }) => {
+    await page.goto('http://localhost:3000/books?page=1&size=5');
+    await page.getByRole('button', { name: 'Rentals' }).click();
+    await page.getByRole('button', { name: 'Return' }).click();
+    await expect(page.getByText('Are you sure you want to')).toBeVisible();
+    await page.getByRole('button', { name: 'OK' }).click();
+    await expect(page.getByText('Zwrócono książkę!')).toBeVisible();
+    await page.getByRole('button', { name: 'Rentals' }).click();
+    await expect(page.getByRole('cell', { name: 'Book 2' })).toBeVisible();
+    await page.getByRole('cell').filter({ hasText: /^$/ }).nth(1).click();
+  });
+
+  test('Check rented book for admin', async ({ page }) => {
+    await page
+      .getByRole('row', { name: 'Book 3 Author 3' })
+      .getByRole('button')
+      .first()
+      .click();
+    await page.getByRole('button', { name: 'Rent a book' }).click();
+    await page.getByRole('button', { name: 'OK' }).click();
+    await expect(page.getByText('Zaktualizowano książkę!')).toBeVisible();
+  });
+
   test('Set book data to previous state', async ({ request }) => {
     const response = await request.patch('http://localhost:3307/books/1', {
       data: {
@@ -102,29 +125,46 @@ test.describe.serial('Admin E2E', () => {
     }
   });
 
-  test('Returned book user for admin', async ({ page }) => {
-    await page.goto('http://localhost:3000/books?page=1&size=5');
-    await page.getByRole('button', { name: 'Rentals' }).click();
-    await page.getByRole('button', { name: 'Return' }).click();
-    await expect(page.getByText('Are you sure you want to')).toBeVisible();
-    await page.getByRole('button', { name: 'OK' }).click();
-    await expect(page.getByText('Zwrócono książkę!')).toBeVisible();
-    await page.getByRole('button', { name: 'Rentals' }).click();
-    await expect(page.getByRole('cell', { name: 'Book 2' })).toBeVisible();
-    await page.getByRole('cell').filter({ hasText: /^$/ }).nth(1).click();
-  });
-
-  test('Set book data to previous state', async ({ request }) => {
-    const response = await request.patch('http://localhost:3307/books/1', {
+  test('Set rentals data to previous state', async ({ request }) => {
+    const response = await request.patch('http://localhost:3307/rentals/2', {
       data: {
-        description: 'Lorem ipsum',
-        author: 'Author 1',
-        title: 'Book 1',
-        year: 2001,
+        returnedAt: null,
       },
     });
     await expect(response.status()).toBe(200);
-    const updatedBook = await response.json();
+    const updatedRentals = await response.json();
+    await expect(updatedRentals.returnedAt).toBeNull();
+
+    const responseBook = await request.patch('http://localhost:3307/books/2', {
+      data: {
+        quantity: 1,
+      },
+    });
+    const updatedBook = await responseBook.json();
+    await expect(updatedBook.quantity).toBe(1);
+  });
+
+  test('Set rental data to previous state after book rental for admin', async ({
+    request,
+  }) => {
+    const response = await request.get(
+      `http://localhost:3307/rentals?bookId=3`,
+    );
+    await expect(response.status()).toBe(200);
+    const rentals = await response.json();
+    const deleteRentalId = rentals[0].id;
+    const deletedRentals = await request.delete(
+      `http://localhost:3307/rentals/${deleteRentalId}`,
+    );
+    await expect(deletedRentals.status()).toBe(200);
+
+    const resposneBook = await request.patch('http://localhost:3307/books/3', {
+      data: {
+        quantity: 2,
+      },
+    });
+    await expect(resposneBook.status()).toBe(200);
+    const updatedBook = await resposneBook.json();
     await expect(updatedBook.quantity).toBe(2);
   });
 
