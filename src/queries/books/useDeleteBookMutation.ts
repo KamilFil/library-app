@@ -31,19 +31,19 @@ export const useDeleteBookMutation = () => {
 
       return apiDelete<BookEntity>(`books/${bookId}`);
     },
-    onSuccess: () => {
+    onSuccess: async () => {
       showNotification('Usunięto książkę!', 'success');
-      logInfo(user!.email, 'Usunięto książkę');
-      queryClient.invalidateQueries({
+      await logInfo(user!.email, 'Usunięto książkę');
+      await queryClient.invalidateQueries({
         queryKey: ['books'],
       });
     },
-    onError: (error: Error) => {
+    onError: async (error: Error) => {
       showNotification(
         error.message ?? 'Nie udało się usunać książki',
         'error',
       );
-      logError(user!.email, LogActionError.DeleteBook, error.message);
+      await logError(user!.email, LogActionError.DeleteBook, error.message);
     },
   });
 

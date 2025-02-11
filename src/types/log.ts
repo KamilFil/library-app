@@ -30,6 +30,7 @@ export enum LogActionInfo {
   ReturnBook = 'Zwrócenie książki',
   UserDeletion = 'Usunięcie użytkownika',
   AddBook = 'Dodanie książki',
+  EditBook = 'Edycja książki',
 }
 
 export enum LogActionError {
@@ -40,4 +41,5 @@ export enum LogActionError {
   DeleteBook = 'Usuwanie książki',
   UserDeletion = 'Nieudane usunięcie użytkownika',
   AddBook = 'Nieudane dodanie książki',
+  EditBook = 'Nieudana edycja książki',
 }
