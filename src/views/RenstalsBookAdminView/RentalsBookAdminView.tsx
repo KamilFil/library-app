@@ -99,12 +99,13 @@ export const RentalsBookAdminView = () => {
                     </Tooltip>
                   )}
                 </StyledTableCell>
-                {rentals.returnedAt === null &&
-                isOverdueRental(rentals).isOverdue ? (
+                {rentals.returnedAt === null ? (
                   <StyledTableCell align={'center'}>
                     <ReturnBookComponent record={rentals} />
                   </StyledTableCell>
-                ) : null}
+                ) : (
+                  <StyledTableCell />
+                )}
               </StyledTableRow>
             ))}
           </TableBody>

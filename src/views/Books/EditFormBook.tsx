@@ -115,6 +115,10 @@ export const EditFormBook = ({
                   value: rentedBooks,
                   message: `You cannot set quantity below ${rentedBooks}`,
                 },
+                max: {
+                  value: 100,
+                  message: 'Quantity cannot be higher than 100',
+                },
               })}
             />
             {errors.quantity?.message && (

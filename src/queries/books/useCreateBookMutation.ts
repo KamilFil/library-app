@@ -17,7 +17,11 @@ export const useCreateBookMutation = () => {
   const { mutate, isPending } = useMutation({
     mutationKey: ['books', 'create'],
     mutationFn: async (payload: BookDto) => {
-      return apiPost<BookEntity, BookDto>('books', payload);
+      return apiPost<BookEntity, BookDto>('books', {
+        ...payload,
+        year: Number(payload.year),
+        quantity: Number(payload.quantity),
+      });
     },
     onSuccess: async () => {
       showNotification('Dodano książkę!', 'success');
