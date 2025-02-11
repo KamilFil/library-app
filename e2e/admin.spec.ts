@@ -38,11 +38,80 @@ test.describe.serial('Admin E2E', () => {
     await page.getByPlaceholder('Year').click();
     await page.getByPlaceholder('Year').fill('2002');
     await page.getByRole('button', { name: 'Update book' }).click();
-
     await expect(page.getByRole('cell', { name: 'Book 1!' })).toBeVisible();
     await expect(page.getByRole('cell', { name: 'Author 1!' })).toBeVisible();
     await expect(page.getByRole('cell', { name: '2' }).first()).toBeVisible();
-    //widoczny komunikat: zmian wprowadzone pomyslnie
+    await expect(page.getByText('Zaktualizowano książkę!')).toBeVisible();
+  });
+
+  test('Check add book working', async ({ page }) => {
+    await page.getByRole('button', { name: 'Add book' }).click();
+    await page.getByRole('textbox', { name: 'Title' }).click();
+    await page.getByRole('textbox', { name: 'Title' }).fill('Test');
+    await page.getByRole('textbox', { name: 'Author' }).click();
+    await page.getByRole('textbox', { name: 'Author' }).fill('Test');
+    await page.getByRole('textbox', { name: 'Description' }).click();
+    await page
+      .getByRole('textbox', { name: 'Description' })
+      .fill('Test Description');
+    await page.getByPlaceholder('Year').click();
+    await page.getByPlaceholder('Year').fill('1998');
+    await page.getByPlaceholder('Quantity').click();
+    await page.getByPlaceholder('Quantity').fill('12');
+    await page.getByRole('button', { name: 'Add book' }).click();
+    await expect(page.getByText('Dodano książkę!')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Next Page' })).toBeVisible();
+    await page.getByRole('button', { name: 'Next Page' }).click();
+    await page.getByRole('button', { name: 'Next Page' }).click();
+    await page.getByRole('button', { name: 'Next Page' }).click();
+    await page.getByRole('button', { name: 'Next Page' }).click();
+    await page.getByRole('button', { name: 'Next Page' }).click();
+    await expect(
+      page.getByRole('cell', { name: 'Test' }).first(),
+    ).toBeVisible();
+    await page.getByRole('cell', { name: 'Test' }).nth(1).click();
+    await expect(page.getByRole('cell', { name: 'Test' }).nth(1)).toBeVisible();
+  });
+
+  test('Set book data to previous state', async ({ request }) => {
+    const response = await request.patch('http://localhost:3307/books/1', {
+      data: {
+        description: 'Lorem ipsum',
+        author: 'Author 1',
+        title: 'Book 1',
+        year: 2001,
+      },
+    });
+    await expect(response.status()).toBe(200);
+    const updatedBook = await response.json();
+    await expect(updatedBook.quantity).toBe(2);
+  });
+
+  test('Removed new book', async ({ request }) => {
+    const getGuestResponse = await request.get(
+      `http://localhost:3307/books?title=Test`,
+    );
+    const books = await getGuestResponse.json();
+
+    if (books.length > 0) {
+      const bookId = books[0].id;
+      const deleteResponse = await request.delete(
+        `http://localhost:3307/books/${bookId}`,
+      );
+      await expect(deleteResponse.status()).toBe(200);
+    }
+  });
+
+  test('Returned book user for admin', async ({ page }) => {
+    await page.goto('http://localhost:3000/books?page=1&size=5');
+    await page.getByRole('button', { name: 'Rentals' }).click();
+    await page.getByRole('button', { name: 'Return' }).click();
+    await expect(page.getByText('Are you sure you want to')).toBeVisible();
+    await page.getByRole('button', { name: 'OK' }).click();
+    await expect(page.getByText('Zwrócono książkę!')).toBeVisible();
+    await page.getByRole('button', { name: 'Rentals' }).click();
+    await expect(page.getByRole('cell', { name: 'Book 2' })).toBeVisible();
+    await page.getByRole('cell').filter({ hasText: /^$/ }).nth(1).click();
   });
 
   test('Set book data to previous state', async ({ request }) => {

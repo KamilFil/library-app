@@ -16,7 +16,7 @@
       "id": "1",
       "title": "Book 1",
       "author": "Author 1",
-      "quantity": "2",
+      "quantity": 2,
       "description": "Lorem ipsum",
       "year": 2001
     },
@@ -236,6 +236,13 @@
       "bookId": "1",
       "rentedAt": "29.01.2025",
       "returnedAt": "10.02.2025"
+    },
+    {
+      "id": "2",
+      "userId": "1",
+      "bookId": "2",
+      "rentedAt": "29.01.2025",
+      "returnedAt": null
     }
   ],
   "logs": [
