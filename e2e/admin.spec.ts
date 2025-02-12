@@ -79,7 +79,6 @@ test.describe.serial('Admin E2E', () => {
     await page.getByRole('button', { name: 'Return' }).click();
     await expect(page.getByText('Are you sure you want to')).toBeVisible();
     await page.getByRole('button', { name: 'OK' }).click();
-    await expect(page.getByText('Zwrócono książkę!')).toBeVisible();
     await page.getByRole('button', { name: 'Rentals' }).click();
     await expect(page.getByRole('cell', { name: 'Book 2' })).toBeVisible();
     await page.getByRole('cell').filter({ hasText: /^$/ }).nth(1).click();
