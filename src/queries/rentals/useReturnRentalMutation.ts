@@ -23,14 +23,14 @@ export const useReturnRentalMutation = (rentalId?: string) => {
       );
     },
     onSuccess: () => {
-      showNotification('Zwrócono książkę!', 'success');
+      showNotification('Book returned!', 'success');
       logInfo(user!.email, LogActionInfo.ReturnBook);
       queryClient.invalidateQueries({
         queryKey: ['rentals'],
       });
     },
     onError: (error: Error) => {
-      showNotification('Nie udało się zwrócić książki', 'error');
+      showNotification('Failed to return the book', 'error');
       logError(user!.email, LogActionError.ReturnBook, error.message);
     },
   });

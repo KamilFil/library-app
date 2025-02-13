@@ -38,10 +38,10 @@ export const UserBookTable = ({ data }: UserBookTableProps) => {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <StyledTableCell align="left">
-                  {record.book?.title ?? 'Brak książki'}
+                  {record.book?.title ?? 'No book title'}
                 </StyledTableCell>
                 <StyledTableCell align="left">
-                  {record.book?.author ?? 'Brak autora'}
+                  {record.book?.author ?? 'No book author'}
                 </StyledTableCell>
                 <StyledTableCell align="left">
                   {record.rentedAt}

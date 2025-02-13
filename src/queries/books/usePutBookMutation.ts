@@ -26,17 +26,14 @@ export const usePutBookMutation = (bookId?: string) => {
       );
     },
     onSuccess: async () => {
-      showNotification('Zaktualizowano książkę!', 'success');
+      showNotification('Book updated!', 'success');
       await logInfo(user!.email, LogActionInfo.EditBook);
       await queryClient.invalidateQueries({
         queryKey: ['books'],
       });
     },
     onError: async (error: Error) => {
-      showNotification(
-        error.message ?? 'Nie udało się usunać książki',
-        'error',
-      );
+      showNotification(error.message ?? 'Failed to delete the book', 'error');
       await logError(LogActionError.EditBook, error.message);
     },
   });

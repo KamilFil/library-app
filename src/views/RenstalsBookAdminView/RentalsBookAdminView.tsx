@@ -60,7 +60,7 @@ export const RentalsBookAdminView = () => {
               >
                 <StyledTableCell align="left">{rentals.id}</StyledTableCell>
                 <StyledTableCell align="left">
-                  {rentals?.book ? rentals.book.title : 'Brak książki'}
+                  {rentals?.book ? rentals.book.title : 'No book'}
                 </StyledTableCell>
                 <StyledTableCell align="left">
                   {rentals.rentedAt}
@@ -71,15 +71,15 @@ export const RentalsBookAdminView = () => {
                 <StyledTableCell align="left">
                   {rentals?.user
                     ? `${rentals.user.firstName} ${rentals.user.lastName}`
-                    : 'Użytkownik usunięty'}{' '}
+                    : 'User deleted'}{' '}
                 </StyledTableCell>
                 <StyledTableCell>
-                  {rentals?.user ? rentals.user.cardId : 'Brak karty'}
+                  {rentals?.user ? rentals.user.cardId : 'No card'}
                 </StyledTableCell>
                 <StyledTableCell align="center">
                   {isOverdueRental(rentals).daysDifference ? (
                     <Tooltip
-                      title={`Opóźnione o ${isOverdueRental(rentals).daysDifference} dni`}
+                      title={`Delay by ${isOverdueRental(rentals).daysDifference} day`}
                     >
                       <span>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -89,7 +89,7 @@ export const RentalsBookAdminView = () => {
                       </span>
                     </Tooltip>
                   ) : (
-                    <Tooltip title={`Brak opóźnienia`}>
+                    <Tooltip title={`No delay`}>
                       <span>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                           <GppGoodIcon color="success" />

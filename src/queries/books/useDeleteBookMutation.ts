@@ -5,7 +5,7 @@ import { useNotificationStore } from '../../store/useNotificationStore.ts';
 import { useLogger } from '../../hooks/useLogger.ts';
 import { useAuthStore } from '../../store/useAuthStore.ts';
 import { RentalEntity } from '../../types/rental.ts';
-import { LogActionError } from '../../types/log.ts';
+import { LogActionError, LogActionInfo } from '../../types/log.ts';
 
 export const useDeleteBookMutation = () => {
   const { apiDelete } = useApi();
@@ -28,24 +28,21 @@ export const useDeleteBookMutation = () => {
 
       if (isRentBook.length > 0) {
         throw new Error(
-          'Nie można usunąć książki, ponieważ jest ona wypożyczona',
+          'The book cannot be deleted because it is currently rented',
         );
       }
 
       return apiDelete<BookEntity>(`books/${bookId}`);
     },
     onSuccess: async () => {
-      showNotification('Usunięto książkę!', 'success');
-      await logInfo(user!.email, 'Usunięto książkę');
+      showNotification('Book deleted!', 'success');
+      await logInfo(user!.email, LogActionInfo.DeleteBook);
       await queryClient.invalidateQueries({
         queryKey: ['books'],
       });
     },
     onError: async (error: Error) => {
-      showNotification(
-        error.message ?? 'Nie udało się usunać książki',
-        'error',
-      );
+      showNotification(error.message ?? 'Failed to delete the book', 'error');
       await logError(user!.email, LogActionError.DeleteBook, error.message);
     },
   });

@@ -23,23 +23,24 @@ export enum LogType {
 }
 
 export enum LogActionInfo {
-  Register = 'Rejestracja',
-  Login = 'Logowanie',
-  Logout = 'Wylogowanie',
-  RentBook = 'Wypożyczenie książki',
-  ReturnBook = 'Zwrócenie książki',
-  UserDeletion = 'Usunięcie użytkownika',
-  AddBook = 'Dodanie książki',
-  EditBook = 'Edycja książki',
+  Register = 'Registration',
+  Login = 'Login',
+  Logout = 'Logout',
+  RentBook = 'Book rental',
+  ReturnBook = 'Book return',
+  UserDeletion = 'User deletion',
+  AddBook = 'Book addition',
+  EditBook = 'Book editing',
+  DeleteBook = 'Book deletion',
 }
 
 export enum LogActionError {
-  Register = 'Nieudana rejestracja',
-  Login = 'Nieudane logowanie',
-  RentBook = 'Nieudane wypożyczenie książki',
-  ReturnBook = 'Nieudane zwrócenie książki',
-  DeleteBook = 'Usuwanie książki',
-  UserDeletion = 'Nieudane usunięcie użytkownika',
-  AddBook = 'Nieudane dodanie książki',
-  EditBook = 'Nieudana edycja książki',
+  Register = 'Failed registration',
+  Login = 'Failed login',
+  RentBook = 'Failed book rental',
+  ReturnBook = 'Failed book return',
+  DeleteBook = 'Book deletion',
+  UserDeletion = 'Failed user deletion',
+  AddBook = 'Failed book addition',
+  EditBook = 'Failed book editing',
 }

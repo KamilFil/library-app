@@ -20,14 +20,14 @@ export const useCreateRentalMutation = () => {
       return apiPost<RentalEntity, RentalDto>('rentals', payload);
     },
     onSuccess: () => {
-      showNotification('Wypożyczono książkę!', 'success');
+      showNotification('Book rented!', 'success');
       logInfo(user!.email, LogActionInfo.RentBook);
       queryClient.invalidateQueries({
         queryKey: ['rentals'],
       });
     },
     onError: (error: Error) => {
-      showNotification('Nie udało się wypożyczyć książki', 'error');
+      showNotification('Failed to rent the book', 'error');
       logError(user!.email, LogActionError.RentBook, error.message);
     },
   });

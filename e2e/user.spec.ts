@@ -14,13 +14,13 @@ test.describe.serial('User E2E', () => {
     await page.getByRole('textbox', { name: 'Password' }).click();
     await page.getByRole('textbox', { name: 'Password' }).fill('user12');
 
-    await page.getByRole('button', { name: 'Logowanie' }).click();
+    await page.getByRole('button', { name: 'Login' }).click();
   });
 
   test('Check if logged user data is valid', async ({ page }) => {
     await expect(page.getByText('user.e2e@example.com')).toBeVisible();
     await expect(page.getByText('Role: user')).toBeVisible();
-    await expect(page.getByText('Zalogowano pomyślnie!')).toBeVisible();
+    await expect(page.getByText('Successfully logged in!')).toBeVisible();
   });
 
   test('User should not be able to rent a book with quantity 0', async ({
@@ -63,7 +63,7 @@ test.describe.serial('User E2E', () => {
 
     await page.getByRole('button', { name: 'OK' }).click();
 
-    await expect(page.getByText('Wypożyczono książkę!')).toBeVisible();
+    await expect(page.getByText('Book updated!')).toBeVisible();
   });
 
   test('User should not be able to delete account with rented books', async ({
@@ -75,7 +75,7 @@ test.describe.serial('User E2E', () => {
 
   test('User should be able to logout', async ({ page }) => {
     await page.getByRole('button', { name: 'Logout' }).click();
-    await expect(page.getByText('Zostałeś wylogowany!')).toBeVisible();
+    await expect(page.getByText('You have been logged out!')).toBeVisible();
   });
 
   test('User should be able to cancel returning a book', async ({ page }) => {
@@ -90,7 +90,7 @@ test.describe.serial('User E2E', () => {
     await page.getByRole('button', { name: 'Return' }).click();
     await expect(page.getByText('Are you sure you want to')).toBeVisible();
     await page.getByRole('button', { name: 'OK' }).click();
-    await expect(page.getByText('Zwrócono książkę!')).toBeVisible();
+    await expect(page.getByText('Book returned!')).toBeVisible();
   });
 
   test('User should be able to change year and month', async ({ page }) => {
@@ -131,7 +131,7 @@ test.describe.serial('User E2E', () => {
   }) => {
     await page.getByRole('button', { name: 'Delete' }).click();
     await page.getByRole('button', { name: 'OK' }).click();
-    await expect(page.getByText('Użytkownik został usunięty!')).toBeVisible();
+    await expect(page.getByText('User has been deleted!')).toBeVisible();
   });
 
   test('Update users isDeleted flag on false', async ({ request }) => {

@@ -78,7 +78,7 @@ export const useAuth = () => {
     onSuccess: async (data) => {
       setUser(data);
       logInfo(data.email, LogActionInfo.Login);
-      showNotification('Zalogowano pomyślnie!', 'success');
+      showNotification('Successfully logged in!', 'success');
       if (data.role === AuthRole.USER) {
         await navigate({ to: '/user/my_stats' });
       } else {
@@ -95,7 +95,7 @@ export const useAuth = () => {
     logInfo(user!.email, LogActionInfo.Logout);
     setUser(null);
     await navigate({ to: '/sign-in' });
-    showNotification('Zostałeś wylogowany!', 'success');
+    showNotification('You have been logged out!', 'success');
   };
 
   return {

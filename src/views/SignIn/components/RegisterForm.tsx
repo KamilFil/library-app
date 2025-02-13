@@ -69,7 +69,7 @@ export const RegisterForm = ({ handleSwitchForm }: Props) => {
         Sign Up
       </Button>
       <Button variant="outlined" color="primary" onClick={handleSwitchForm}>
-        Log In
+        Login
       </Button>
     </StyledBox>
   );

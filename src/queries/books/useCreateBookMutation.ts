@@ -24,14 +24,14 @@ export const useCreateBookMutation = () => {
       });
     },
     onSuccess: async () => {
-      showNotification('Dodano książkę!', 'success');
+      showNotification('Book added!', 'success');
       await logInfo(user!.email, LogActionInfo.AddBook);
       await queryClient.invalidateQueries({
         queryKey: ['books'],
       });
     },
     onError: async (error: Error) => {
-      showNotification('Nie udało się dodać książki', 'error');
+      showNotification('Failed to add the book', 'error');
       await logError(user!.email, LogActionError.AddBook, error.message);
     },
   });

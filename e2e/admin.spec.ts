@@ -14,7 +14,7 @@ test.describe.serial('Admin E2E', () => {
   });
 
   test('Check if logged admin data is valid', async ({ page }) => {
-    await expect(page.getByText('Zalogowano pomyślnie!')).toBeVisible();
+    await expect(page.getByText('Successfully logged in!')).toBeVisible();
     await expect(page.getByText('admin.e2e@example.com')).toBeVisible();
     await expect(page.getByText('Role: admin')).toBeVisible();
   });
@@ -41,7 +41,7 @@ test.describe.serial('Admin E2E', () => {
     await expect(page.getByRole('cell', { name: 'Book 1!' })).toBeVisible();
     await expect(page.getByRole('cell', { name: 'Author 1!' })).toBeVisible();
     await expect(page.getByRole('cell', { name: '2' }).first()).toBeVisible();
-    await expect(page.getByText('Zaktualizowano książkę!')).toBeVisible();
+    await expect(page.getByText('Book updated!')).toBeVisible();
   });
 
   test('Check add book working', async ({ page }) => {
@@ -59,7 +59,7 @@ test.describe.serial('Admin E2E', () => {
     await page.getByPlaceholder('Quantity').click();
     await page.getByPlaceholder('Quantity').fill('12');
     await page.getByRole('button', { name: 'Add book' }).click();
-    await expect(page.getByText('Dodano książkę!')).toBeVisible();
+    await expect(page.getByText('Book added!')).toBeVisible();
     await expect(page.getByRole('button', { name: 'Next Page' })).toBeVisible();
     await page.getByRole('button', { name: 'Next Page' }).click();
     await page.getByRole('button', { name: 'Next Page' }).click();
@@ -79,7 +79,7 @@ test.describe.serial('Admin E2E', () => {
     await page.getByRole('button', { name: 'Return' }).click();
     await expect(page.getByText('Are you sure you want to')).toBeVisible();
     await page.getByRole('button', { name: 'OK' }).click();
-    await expect(page.getByText('Zwrócono książkę!')).toBeVisible();
+    await expect(page.getByText('Book updated!')).toBeVisible();
     await page.getByRole('button', { name: 'Rentals' }).click();
     await expect(page.getByRole('cell', { name: 'Book 2' })).toBeVisible();
     await page.getByRole('cell').filter({ hasText: /^$/ }).nth(1).click();
@@ -93,7 +93,7 @@ test.describe.serial('Admin E2E', () => {
       .click();
     await page.getByRole('button', { name: 'Rent a book' }).click();
     await page.getByRole('button', { name: 'OK' }).click();
-    await expect(page.getByText('Zaktualizowano książkę!')).toBeVisible();
+    await expect(page.getByText('Book updated!')).toBeVisible();
   });
 
   test('Set book data to previous state', async ({ request }) => {

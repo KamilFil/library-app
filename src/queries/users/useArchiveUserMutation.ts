@@ -19,7 +19,7 @@ export const useArchiveUserMutation = (userId: string) => {
       return apiPatch<User, UserArchiveDto>(`users/${userId}`, payload);
     },
     onSuccess: (deleteUser) => {
-      showNotification('Użytkownik został usunięty!', 'success');
+      showNotification('User has been deleted!', 'success');
       logInfo(user!.email, LogActionInfo.UserDeletion);
       queryClient.invalidateQueries({
         queryKey: ['users'],
@@ -27,7 +27,7 @@ export const useArchiveUserMutation = (userId: string) => {
       return deleteUser;
     },
     onError: (error: Error) => {
-      showNotification('Nie udało się usunąć użytkownika', 'error');
+      showNotification('Failed to delete the user', 'error');
       logError(user!.email, LogActionError.UserDeletion, error.message);
     },
   });

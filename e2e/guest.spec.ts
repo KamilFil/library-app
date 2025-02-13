@@ -86,7 +86,7 @@ test.describe.serial('Guest E2E', () => {
     await page.getByRole('button', { name: 'Log In' }).click();
     await page.getByRole('textbox', { name: 'Email' }).click();
     await page.getByRole('textbox', { name: 'Password' }).click();
-    await page.getByRole('button', { name: 'Logowanie' }).click();
+    await page.getByRole('button', { name: 'Login' }).click();
 
     await expect(page.getByText('Email is required')).toBeVisible();
     await expect(page.getByText('Password is required')).toBeVisible();
@@ -96,31 +96,31 @@ test.describe.serial('Guest E2E', () => {
     await page.getByRole('button', { name: 'Log In' }).click();
 
     await page.getByRole('textbox', { name: 'Email' }).click();
-    await page.getByRole('textbox', { name: 'Email' }).fill('asasasas');
+    await page.getByRole('textbox', { name: 'Email' }).fill('asasasas@pl.pl');
 
     await page.getByRole('textbox', { name: 'Password' }).click();
     await page.getByRole('textbox', { name: 'Password' }).fill('asasasas');
 
-    await page.getByRole('button', { name: 'Logowanie' }).click();
+    await page.getByRole('button', { name: 'Login' }).click();
 
     await expect(page.getByText('User not found')).toBeVisible();
   });
 
   test('Guest have already account', async ({ page }) => {
     await page.getByRole('button', { name: 'Log In' }).click();
-    await page.getByRole('button', { name: 'Utwórz konto' }).click();
-    await page.getByRole('button', { name: 'Mam już konto' }).click();
+    await page.getByRole('button', { name: 'Create an account' }).click();
+    await page.getByRole('button', { name: 'Login' }).click();
 
-    await expect(page.getByRole('button', { name: 'Logowanie' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
   });
 
   test('Guest try to register with no data', async ({ page }) => {
     await page.getByRole('button', { name: 'Log In' }).click();
 
-    await page.getByRole('button', { name: 'Log In' }).click();
-    await page.getByRole('button', { name: 'Utwórz konto' }).click();
+    await page.getByRole('button', { name: 'Login' }).click();
+    await page.getByRole('button', { name: 'Create an account' }).click();
     await page.getByRole('textbox', { name: 'Email' }).click();
-    await page.getByRole('button', { name: 'Rejestracja' }).click();
+    await page.getByRole('button', { name: 'Sign Up' }).click();
     await expect(page.getByText('Email is required')).toBeVisible();
     await expect(page.getByText('Password is required')).toBeVisible();
     await expect(page.getByText('Lastname is required')).toBeVisible();
@@ -130,7 +130,7 @@ test.describe.serial('Guest E2E', () => {
   test('Guest register successfully', async ({ page }) => {
     await page.getByRole('button', { name: 'Log In' }).click();
 
-    await page.getByRole('button', { name: 'Utwórz konto' }).click();
+    await page.getByRole('button', { name: 'Create an account' }).click();
 
     await page.getByRole('textbox', { name: 'Email' }).click();
     await page
@@ -146,7 +146,7 @@ test.describe.serial('Guest E2E', () => {
     await page.getByRole('textbox', { name: 'Firstname' }).click();
     await page.getByRole('textbox', { name: 'Firstname' }).fill('user12');
 
-    await page.getByRole('button', { name: 'Rejestracja' }).click();
+    await page.getByRole('button', { name: 'Sign Up' }).click();
 
     await expect(page.getByText('Konto zostało utworzone!')).toBeVisible();
   });
